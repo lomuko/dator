@@ -1,8 +1,3 @@
-Freelancer Jekyll theme  
-=========================
-
-Jekyll theme based on [Freelancer bootstrap theme ](http://startbootstrap.com/template-overviews/freelancer/)
-
 ## How to use
  - Place a image in `/img/portfolio/`
  - Replace `your-email@domain.com` in `_config.yml` with your email address. Refer to [formspree](http://formspree.io/) for more information.
@@ -22,11 +17,10 @@ description: The description of the project
 ---
 ```
 
-## Demo
-View this jekyll theme in action [here](https://jeromelachaud.com/freelancer-theme)
-
-## Screenshot
-![screenshot](https://raw.githubusercontent.com/jeromelachaud/freelancer-theme/master/screenshot.png)
+## Run
+ - Build the site and make it available on a local server. `bundle exec jekyll serve`
+ - Browse to `http://localhost:4000`
+View this jekyll theme in action [here](https://davidtor.es)
 
 ---------
-For more details, read the [documentation](http://jekyllrb.com/)
+based on [Freelancer bootstrap theme ](http://startbootstrap.com/template-overviews/freelancer/)
