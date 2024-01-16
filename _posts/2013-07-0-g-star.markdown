@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 2
+date: 2014-07-15
+img: g-star-raw.png
+alt: image-alt
+project-date: April 2014
+client: G-Star RAW
+category: Java Development
+description: G-Star RAW (commonly called G-Star) is a Dutch designer clothing company, founded in Amsterdam in 1989. The brand specializes in making raw denim—an unwashed, untreated denim. G-Star is influenced by military clothing. Inspirations of their designs come from vintage military apparel from around the world.
+---
