@@ -1,10 +1,10 @@
 ---
 layout: default
 modal-id: 7
-date: 2019-10-15
+date: 2020-11-01
 img: alko.png
 alt: Alko Inc
-project-date: April 2014
+project-date: November 2020
 client: Alko Inc
 category: Intershop Development
 description: Alko Inc is the national alcoholic beverage retailing monopoly in Finland. It is the only alcoholic store in the country

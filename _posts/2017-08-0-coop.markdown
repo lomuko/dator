@@ -1,10 +1,10 @@
 ---
 layout: default
 modal-id: 5
-date: 2014-07-15
+date: 2018-03-15
 img: coop.png
 alt: image-alt
-project-date: April 2014
+project-date: March 2018
 client: Start Bootstrap
 category: Intershop Development
 description: Coop Supermarkten is a supermarket chain founded in 1891 in Zaandam, Netherlands.[4] It is named after the cooperative aspects of the company. In 2001, the company merged with wholesale purchaser Codis to form CoopCodis.[4] In 2009, the name was changed again, from CoopCodis to Coop Supermarkten. Coop Supermarkten takes part in the Dutch wholesale purchasing cooperative Superunie.
