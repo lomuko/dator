@@ -1,7 +1,7 @@
 ---
 layout: default
 modal-id: 8
-date: 2014-07-15
+date: 2022-01-01
 img: atlas-copco.png
 alt: image-alt
 project-date: January 2022
