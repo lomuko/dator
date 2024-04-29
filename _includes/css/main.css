@@ -25,7 +25,8 @@ a.active {
     color: #{{ site.color.primary }};
 }
 
-h1,
+h1 {margin-top: 0;}
+h1, 
 h2,
 h3,
 h4,
