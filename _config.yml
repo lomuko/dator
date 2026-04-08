@@ -1,45 +1,75 @@
 # Site settings
-title: Java & Intershop Developer | David Tortajada
-brand: Davidtor
+title: "DavidTor.es"
+name: "David Tortajada"
+subtitle: "Senior Backend Engineer"
 email: mail@davidtor.es
 phone: +34655579880
 url: https://davidtor.es
-description: "Freelance Java & Intershop developer for hire, specialising in development B2C and B2B web applications using JavaScript, Node.js & more"
-keywords: "David Tortajada - Freelance Java & Intershop Developer"
-skills: "Java & Intershop Developer"
+description: "Senior Java Engineer & IoT Enthusiast"
+keywords: "Java & Intershop developer"
 meta_author: David Tortajada
 
+theme: "minimal-mistakes-jekyll"
+minimal_mistakes_skin: "mint" # Puedes probar: air, mint, sunrise, aqua, dark
+
+# Plugins necesarios
+plugins:
+  - jekyll-remote-theme
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+author:
+  name     : "David Tor"
+  avatar   : "/assets/images/me.jpg" 
+  bio: "Senior Java Engineer"
+  location : "Cantabria, Spain"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: https://www.linkedin.com/in/davidtor
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: http://github.com/lomuko
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:mail@davidtor.es"
+  
+  # Postal address (add as many lines as necessary)
+  address:
+    - line: Santander, Cantabria
+    - line: CP 39100 - SPAIN
 # Google webmaster tools
 google_verify: mknHCRGiTdHQ9SRjRiO15_zQeFFllHgknZDpMsDssJY
 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify: 1D8E7E0D0A3BD8571B47891FAAB3B944
 
-# Color settings (hex-codes without the leading hash-tag)
-color:
-  primary: 18bc9c #80B3FF
-  primary-rgb: "24,288,156" #"128,179,255"
-  secondary: 2c3e50 #FD6E8A
-  secondary-dark: 233140 #A2122F
 
-# Footer settings
-footer:
-  copyright: David Tortajada
-  location: Location
-  social: Around the Web
-  credits: Credits
 
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
-social:
-  - title: linkedin
-    url: https://www.linkedin.com/in/davidtor
-  - title: github
-    url: http://github.com/lomuko
+# Configuración de contenidos
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  - scope:
+      path: "_pages"
+      type: _pages
+    values:
+      layout: single
+      author_profile: true
 
-# Postal address (add as many lines as necessary)
-address:
-  - line: Santander, Cantabria
-  - line: CP 39100 - SPAIN
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+
 
 # Credits content
 credits: 
@@ -49,13 +79,7 @@ credits:
 markdown: kramdown
 permalink: pretty
 
-#for posts
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      permalink: ""
+
 
 exclude:
   - .vscode/

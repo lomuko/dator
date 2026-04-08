@@ -1,18 +1,37 @@
-<!DOCTYPE html>
-<html lang='en-gb'>
-{% include head.html %}
+---
+---
+{%- assign locale = page.locale | default: layout.locale | default: site.locale %}
 
-<body id="page-top" class="index">
-  {% include nav.html %}
-  {% include header.html %}
-  {% include portfolio_grid.html %}
-  {% include about.html %}
+<!doctype html>
+{% include copyright.html %}
+<html lang="{{ locale | replace: "_", "-" | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html locale=locale %}
+    {% include head/custom.html %}
+  </head>
 
-  {% include contact.html %}
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    {% include_cached skip-links.html locale=locale %}
+    {% include_cached masthead.html locale=locale %}
 
-  {% include footer.html %}
-  {% include modals.html %}
-  {% include js.html %}
-</body>
+    <div class="initial-content">
+      {{ content }}
+      {% include after-content.html %}
+    </div>
 
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html locale=locale %}
+      </div>
+    {% endif %}
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html locale=locale %}
+      </footer>
+    </div>
+
+    {% include scripts.html locale=locale %}
+  </body>
 </html>

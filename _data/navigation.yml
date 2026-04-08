@@ -1,0 +1,10 @@
+# _data/navigation.yml
+main:
+  - title: "Resume"
+    url: /resume/
+  - title: "Experiencia"
+    url: /experience/
+  - title: "Home Lab"
+    url: /home-lab/
+  - title: "Contacto"
+    url: /contact/
