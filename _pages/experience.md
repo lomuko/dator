@@ -5,7 +5,7 @@ permalink: /experience/
 author_profile: true
 ---
 
-He desarrollado mi carrera principalmente en el ecosistema **Java**, especializándome en plataformas de **E-commerce de alta disponibilidad**. Mi enfoque combina la solidez técnica con una mentalidad ágil y orientada a resultados.
+He desarrollado mi carrera principalmente en el ecosistema **Java**, especializándome en plataformas de **e-commerce de alta disponibilidad** capaces de soportar grandes volúmenes de tráfico. Mi enfoque combina la solidez técnica con una mentalidad ágil y orientada a resultados.
 
 ---
 
@@ -14,10 +14,10 @@ He desarrollado mi carrera principalmente en el ecosistema **Java**, especializ�
 ### 🛠️ Freelance Java & Intershop Consultant
 **Valtech / Wunderman Thompson** | *Nov 2020 – Mayo 2024*
 
-Especialista backend en proyectos internacionales para grandes retailers europeos.
-* **Backend & APIs:** Desarrollo de funcionalidades core y REST APIs escalables.
-* **Búsqueda Avanzada:** Integración y optimización de **Solr** para mejorar la experiencia de descubrimiento de producto.
-* **Data Performance:** Optimización de consultas complejas en **Oracle y MSSQL**, asegurando la estabilidad en sistemas con tráfico 24/7.
+Especialista backend en proyectos internacionales para grandes retailers europeos, enfocado en escalabilidad y rendimiento.
+* **Backend & APIs:** Desarrollo de funcionalidades core y REST APIs siguiendo estándares de alta disponibilidad.
+* **Búsqueda Avanzada:** Integración y optimización de **Solr**, mejorando los tiempos de respuesta y la relevancia en el descubrimiento de productos.
+* **Data Performance:** Optimización de consultas complejas en **Oracle y MSSQL**, asegurando la estabilidad del sistema en entornos con tráfico 24/7.
 * **Stack:** Java, Intershop, Solr, Git, CI/CD, Agile.
 
 ---
@@ -25,8 +25,8 @@ Especialista backend en proyectos internacionales para grandes retailers europeo
 ### 🚀 Java & Intershop Consultant
 **Incentro** | *Julio 2013 – Noviembre 2020*
 
-Responsable de la evolución técnica de plataformas para clientes críticos como **G-Star RAW**, **Wolters Kluwer NL**, **Coop** y **Novamedia**.
-* **Upgrade Leadership:** Lideré migraciones técnicas de **Intershop (7.5 → 7.9)**, reduciendo la deuda técnica y mejorando la estabilidad del sistema.
+Desarrollo y mantenimiento evolutivo de plataformas para clientes internacionales de alto impacto como **G-Star RAW**, **Wolters Kluwer NL**, **Coop** y **Novamedia**.
+* **Technical Upgrades:** Participé activamente en las migraciones de **Intershop (7.5 → 7.9)**, contribuyendo a reducir la deuda técnica y mejorar la estabilidad general.
 * **E-commerce Operations:** Gestión de flujos de replicación de datos, promociones complejas y catálogos de gran volumen.
 * **DevOps Support:** Soporte activo en tareas de operaciones y mantenimiento preventivo de sistemas de misión crítica.
 

@@ -1,5 +1,5 @@
 # Site settings
-title: "DavidTor.es"
+title: "davidtor.es"
 name: "David Tortajada"
 subtitle: "Senior Backend Engineer"
 email: mail@davidtor.es
@@ -10,7 +10,7 @@ keywords: "Java & Intershop developer"
 meta_author: David Tortajada
 
 theme: "minimal-mistakes-jekyll"
-minimal_mistakes_skin: "mint" # Puedes probar: air, mint, sunrise, aqua, dark
+minimal_mistakes_skin: "contrast" # Puedes probar: air, mint, sunrise, aqua, dark
 
 # Plugins necesarios
 plugins:
@@ -20,9 +20,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name     : "David Tor"
+  name     : "David Tortajada"
   avatar   : "/assets/images/me.jpg" 
-  bio: "Senior Java Engineer"
+  bio    : "Senior Java Developer"
   location : "Cantabria, Spain"
   links:
     - label: "LinkedIn"

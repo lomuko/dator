@@ -1,79 +1,73 @@
 ---
 layout: single
-title: "Resume"
+title: "Trayectoria Profesional"
 permalink: /resume/
 author_profile: true
 ---
 
-# David Tor
-**Senior Java Developer | E-commerce Expert**
+## Senior Java Engineer | E-commerce Expert
 
-Ingeniero Técnico en Informática con más de 15 años de experiencia técnica. Especializado en el desarrollo de plataformas de comercio electrónico de alta disponibilidad y gran escala. Apasionado por el código limpio, la arquitectura robusta y la resolución de problemas complejos.
-
----
-
-## 🛠 Skills Técnicas
-
-* **Lenguajes:** Java (Expert, actualizando a Java 17/21), SQL (Oracle, MSSQL), C#/.NET.
-* **Frameworks:** Spring Boot, Spring MVC, Hibernate, J2EE, Intershop (7.5 - 7.9).
-* **Herramientas & DevOps:** Git, Jira, CI/CD, Solr, Linux, Docker.
-* **Cloud:** AWS, Azure.
-* **Metodologías:** Agile (Scrum), Kanban.
-* **Idiomas:** Español (Nativo), Inglés (B2 - Profesional).
+Con más de 15 años de experiencia, he construido y optimizado plataformas de comercio electrónico para marcas globales. Mi enfoque une la robustez de las arquitecturas empresariales con la agilidad del desarrollo moderno.
 
 ---
 
-## 🚀 Experiencia Profesional
+## 🛠️ Stack Tecnológico
+
+* **Backend:** Java (Expert, actualizando a 17/21), Spring Boot, J2EE, C#/.NET.
+* **E-commerce:** Intershop (Expert, versiones 7.5 a 7.9).
+* **Búsqueda & Datos:** Solr, Oracle, MSSQL, InfluxDB.
+* **DevOps & Cloud:** AWS, Azure, Git, CI/CD, Jenkins, Docker.
+* **Metodologías:** Scrum (Certificado PSM I), Kanban, Agile.
+
+---
+
+## 🚀 Experiencia Destacada
 
 ### Independent Engineering & Java Refresh
 *Mayo 2024 – Actualidad*
 
-* **Technical Upskilling:** Profundización en **Java 17/21** y **Spring Boot 3**, aplicando nuevos patrones de diseño y mejoras de rendimiento en proyectos de prueba.
-* **Applied IoT (Home Lab):** Diseño e implementación de una planta solar de 5.5kW con almacenamiento en baterías. Desarrollo de lógica de automatización y optimización energética mediante **Home Assistant**, integrando diversos protocolos y APIs de monitorización.
+Tras años en consultoría para grandes retailers, me encuentro en una fase de evolución técnica:
+* **Modern Java:** Implementación de arquitecturas actuales con **Java 17/21** y **Spring Boot 3**.
+* **Applied IoT (Home Lab):** Diseño integral de un ecosistema energético con **5.5kW de potencia solar** y almacenamiento DIY.
+* **Automatización:** Programación de lógica de control en **Home Assistant** (YAML, Python) para la gestión inteligente de consumos.
+    * *Más detalles en mi sección [Home Lab](/home-lab/)*.
 
 ### Freelance Java & Intershop Consultant (Valtech / Wunderman Thompson)
 *Noviembre 2020 – Mayo 2024*
 
-* Desarrollo y mantenimiento de plataformas e-commerce para grandes retailers europeos.
-* Implementación de microservicios, REST APIs y optimización de motores de búsqueda (Solr).
-* Garantía de alta disponibilidad (24/7) y optimización de consultas complejas en Oracle/MSSQL.
+* Desarrollo y mantenimiento de plataformas para **retailers europeos de primer nivel**.
+* Implementación de REST APIs y microservicios para la integración de sistemas de terceros.
+* Optimización de **Solr Search** y tunning de consultas **Oracle/MSSQL** para entornos de alta concurrencia.
 
 ### Java & Intershop Consultant (Incentro)
 *Julio 2013 – Noviembre 2020*
 
-* Liderazgo técnico en migraciones críticas de Intershop (7.5 a 7.9) para clientes internacionales (G-Star RAW, Wolters Kluwer).
-* Gestión de flujos de replicación de datos, catálogos masivos y promociones complejas.
-* Soporte a operaciones DevOps y estabilidad del sistema.
+* Liderazgo técnico en migraciones críticas de **Intershop (7.5 → 7.9)** para clientes como **G-Star RAW** y **Wolters Kluwer NL**.
+* Garantía de disponibilidad 24/7 en sistemas de misión crítica.
+* Gestión de flujos complejos de replicación, catálogos masivos y promociones.
 
-### Desarrollador C# (.NET) (Ayuntamiento de Santander / Quality Objects)
-*Enero 2013 – Julio 2013*
-
-* Desarrollo de aplicaciones web internas utilizando arquitecturas de capas y WCF.
-
-### Analista Java (Mutua Madrileña)
-*Agosto 2008 – Mayo 2012*
-
-* Mantenimiento de aplicaciones web J2EE críticas utilizando Spring, Hibernate y Struts.
-
-### Junior Developer (Indra)
-*Febrero 2007 – Junio 2008*
+### Etapa Anterior (2007 - 2013)
+* **C# Developer (Ayuntamiento de Santander):** Aplicaciones web en .NET y WCF.
+* **Analista Java (Mutua Madrileña):** Mantenimiento de sistemas J2EE con Spring y Hibernate.
+* **Junior Developer (Indra):** Desarrollo de plataformas de seguros con Struts y Ajax.
 
 ---
 
 ## 🎓 Educación y Certificaciones
 
-* **Ingeniería Técnica en Informática de Sistemas** – Universidad de Zaragoza.
-* **Professional Scrum Master (PSM I)** – 2020.
-* **Certificación Angular 8** – 2019.
-* **Intershop Developer Training** – 2017.
+* **Ingeniería Técnica en Informática de Sistemas** – Univ. de Zaragoza.
+* **Professional Scrum Master (PSM I)** – Scrum.org.
+* **Angular 8 & Cybersecurity Training**.
+* **Intershop Developer Certified**.
 
 ---
 
-## 💡 Proyectos Destacados
+## 🎯 Mi Filosofía de Trabajo
 
-* **[Davidtor.es](https://davidtor.es):** Mi portfolio personal construido con Jekyll, donde documento mis avances en Java y automatización.
-* **Solar Optimization Logic:** Scripts en YAML/Jinja2 para la gestión inteligente de excedentes energéticos en tiempo real.
+> "Creo en el **código limpio**, en la importancia de entender el negocio antes de escribir la primera línea y en que la mejor tecnología es aquella que resuelve el problema de forma escalable y mantenible."
 
 ---
 
-> *“Prefiero escribir código fiable y mantenible antes que soluciones complejas innecesarias. Disfruto enfrentándome a retos técnicos que requieran un análisis profundo.”*
+### ¿Hablamos?
+Si necesitas un perfil senior capaz de gestionar desde el backend hasta la arquitectura del dato:
+[Ver Proyectos de Automatización](/home-lab/){: .btn .btn--info} [Contactar ahora](/contact/){: .btn .btn--primary}

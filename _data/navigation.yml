@@ -1,5 +1,7 @@
 # _data/navigation.yml
 main:
+  - title: "Inicio"
+    url: /
   - title: "Resume"
     url: /resume/
   - title: "Experiencia"
@@ -8,3 +10,15 @@ main:
     url: /home-lab/
   - title: "Contacto"
     url: /contact/
+
+home_lab_nav:
+  - title: "Serie: Porche Solar"
+    children:
+
+
+      - title: "1. Arquitectura del Proyecto"
+        url: /home-lab/design-arquitecture/
+      - title: "1. Diseño y Estructura"
+        url: /home-lab/design-structure/
+      - title: "2. Seleccion de hardware"
+        url: /home-lab/hardware-selection/

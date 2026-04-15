@@ -1,6 +1,5 @@
 ---
 layout: single
-author_profile: true
 title: "David Tortajada"
 excerpt: "Senior Java Developer & E-commerce Consultant"
 permalink: /
@@ -9,15 +8,11 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: /assets/images/header.jpg
-  actions:
-    - label: "Ver experiencia"
-      url: "/experience/"
-    - label: "Contactar"
-      url: "/contact/"
 ---
 
 ## 👋 Hola, soy David
-Bienvenido a mi espacio personal. Soy un ingeniero de software que cree en la **simplicidad**, la **mantenibilidad** y el aprendizaje continuo. 
+
+Bienvenido a mi espacio personal. Soy un ingeniero de software que cree en la **simplicidad**, la **mantenibilidad** y el **aprendizaje continuo**. 
 
 **Senior Java Developer especializado en e-commerce**, con más de 10 años de experiencia construyendo y manteniendo plataformas para empresas internacionales.
 
@@ -39,10 +34,10 @@ Trabajo principalmente con **Java, Spring y soluciones e-commerce como Intershop
 
 Durante mi carrera he trabajado en proyectos de alto impacto:
 
-- Migraciones de plataformas **Intershop**
-- Desarrollo de sistemas e-commerce para múltiples países
-- Integración de servicios externos y APIs
-- Mejora de rendimiento en aplicaciones críticas
+- Evolución y mantenimiento de plataformas para grandes retailers europeos.
+- Migraciones técnicas de versiones core en entornos críticos.
+- Integración de servicios externos, búsqueda avanzada (Solr) y APIs.
+- Mejora de rendimiento y estabilidad en aplicaciones con alto tráfico.
 
 👉 [Ver experiencia completa →](/experience/)
 
@@ -59,8 +54,8 @@ Durante mi carrera he trabajado en proyectos de alto impacto:
 - Intershop
 
 **Otros**
-- Git
-- CI/CD
+- Git / CI-CD
+- SQL (Oracle, MSSQL)
 - Arquitectura de software
 
 ---
@@ -80,8 +75,8 @@ Aquí comparto lo que estoy haciendo últimamente: aprendizaje, pruebas técnica
 
 Si quieres trabajar conmigo o simplemente conectar:
 
-- GitHub: https://github.com/lomuko
-- LinkedIn: https://www.linkedin.com/in/davidtor
-- Email: mailto:mail@davidtor.es
+- [GitHub](https://github.com/lomuko)
+- [LinkedIn](https://www.linkedin.com/in/davidtor)
+- [Envíame un email](mailto:mail@davidtor.es)
 
 ---
