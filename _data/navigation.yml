@@ -6,19 +6,21 @@ main:
     url: /resume/
   - title: "Experiencia"
     url: /experience/
-  - title: "Home Lab"
+  - title: "Solar Home"
     url: /home-lab/
   - title: "Contacto"
     url: /contact/
 
 home_lab_nav:
-  - title: "Serie: Porche Solar"
+  - title: "Serie: Solar Home"
     children:
-
-
       - title: "1. Arquitectura del Proyecto"
         url: /home-lab/design-arquitecture/
-      - title: "1. Diseño y Estructura"
-        url: /home-lab/design-structure/
       - title: "2. Seleccion de hardware"
         url: /home-lab/hardware-selection/
+      - title: "3. Home Assistant"
+        url: /home-lab/home-assistant/
+      - title: "3. Diseño y estructura"
+        url: /home-lab/design-structure/
+      - title: "4. Precio"
+        url: /home-lab/price/

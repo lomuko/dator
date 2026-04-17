@@ -64,6 +64,13 @@ defaults:
     values:
       layout: single
       author_profile: true
+collections:
+  home-lab:
+    output: true
+    permalink: /home-lab/:slug/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
 
 # Reading Files
 include:
