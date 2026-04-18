@@ -9,7 +9,7 @@ description: "Senior Java Engineer & IoT Enthusiast"
 keywords: "Java & Intershop developer"
 meta_author: David Tortajada
 
-theme: "minimal-mistakes-jekyll"
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "contrast" # Puedes probar: air, mint, sunrise, aqua, dark
 
 # Plugins necesarios
