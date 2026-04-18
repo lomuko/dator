@@ -1,295 +1,101 @@
 ---
-
 layout: single
-title: "Solar Home-Lab (II): Hardware y decisiones técnicas"
+title: "Solar Home-Lab II: Hardware y Decisiones Técnicas"
 header:
-  overlay_image: /assets/images/solar/header-diseno.jpg
+  overlay_image: /assets/images/solar/solar2.jpg
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"
 date: 2026-03-30
 collection: porche-solar
 tags: [solar, homelab, energia, fotovoltaica, autoconsumo, baterias, inversor]
-excerpt: "Cómo pasé de querer un simple porche a diseñar un sistema solar completo en Cantabria."
+excerpt: "Filosofía Open-Hardware: Elegir componentes modulares para no depender de nadie."
 toc: true
 toc_sticky: true
 slug: hardware-selection
 order: 2
+---
+
+## 🔧 1. Filosofía de hardware: Abierto y Modular
+
+Antes de comprar el primer tornillo, definí mi "stack" tecnológico bajo una premisa de ingeniería: **Soberanía Tecnológica**. No quería un sistema cerrado donde una actualización de términos de servicio o el cierre de una empresa dejaran mi casa a oscuras.
+
+Buscaba un sistema:
+* **Modular:** Capaz de escalar en capacidad de batería o paneles de forma independiente.
+* **Reparable:** Si un componente falla en 5 años, quiero poder sustituirlo yo mismo sin pasar por un servicio técnico propietario.
+* **Transparente:** Acceso total a los datos mediante protocolos estándar (Modbus, MQTT).
 
 ---
 
-## 🔧 1 - Filosofía de hardware: abierto, modular y sin ataduras
+## ☀️ 2. Paneles Solares: Eficiencia y Habitabilidad
 
-Antes de elegir componentes, tenía clara una cosa: no quería un sistema cerrado.
+Elegí paneles de **Trina Solar (Vertex S+)** por su equilibrio entre rendimiento industrial y manejo doméstico.
 
-No quería depender de una app ni de un fabricante para ampliar, reparar o simplemente entender cómo funciona mi instalación.
+| Especificación | Detalle |
+| :--- | :--- |
+| **Potencia** | ~440 Wp por panel |
+| **Tecnología** | Bifacial / Vidrio-Vidrio |
+| **Transparencia** | ~5–6% (luz tamizada) |
+| **Peso/Tamaño** | 22 kg / 1.76 m |
 
-Quería algo:
+### 🧠 El factor "Manejabilidad"
+Aunque existen paneles de 600W+, su tamaño (~2.2m) los hace peligrosos para una instalación DIY a cierta altura. Optar por paneles de 1.76m permitió un montaje ágil entre dos personas y una menor carga estructural frente al viento.
 
-* modular
-* flexible
-* reparable
-
-Y, sobre todo, que pudiese entender completamente.
-
-> Si algo falla dentro de 5 años, quiero poder arreglarlo yo.
-
-Ese enfoque descartaba muchas soluciones comerciales desde el principio.
-
----
-
-## ☀️ 2- Paneles solares: eficiencia, estética y sentido práctico
-
-Elegí paneles de Trina Solar, un fabricante más que consolidado.
-
-Características principales:
-
-* ~440 W por panel
-* Bifaciales
-* Construcción vidrio-vidrio
-* Transparencia ~5–6%
-* Tamaño ~1,76 m
-* Peso ~22 kg
+### 🌤️ Ventaja Bifacial en el Norte
+En Cantabria, la luz difusa es la norma. Los paneles bifaciales no solo son estéticamente superiores al carecer de lámina trasera plástica (backsheet), sino que capturan el **albedo** (reflejo del suelo), sumando eficiencia en condiciones de baja radiación.
 
 ---
 
-### 🧠 Por qué este formato y no paneles “gigantes”
+## ⚡ 3. El Inversor: Deye 6kW Híbrido
 
-Los paneles de gran formato (~2,2 m) ofrecen más potencia, (600W), pero tienen un problema muy real:
+El inversor es el kernel de nuestro sistema operativo energético. Tras analizar el mercado, la comparativa fue clara:
 
-son difíciles de manejar.
+* **Victron:** El "Gold Standard", robusto pero con un precio que duplicaba el presupuesto.
+* **Huawei:** Excelente rendimiento, pero un jardín vallado (baterías propietarias obligatorias).
+* **Deye:** El equilibrio perfecto. Permite baterías DIY, tiene funciones *on-grid* y *off-grid* simultáneas y una comunidad enorme.
 
-En un entorno doméstico, y a una cierta altura, eso significa:
-
-* montaje más complicado
-* más riesgo
-* más exigencia estructural
-
-En cambio, este formato:
-
-* es manejable entre dos personas
-* encaja mejor en el diseño del porche
-* reduce complicaciones durante la instalación
-
-Puede parecer un detalle menor, pero en obra marca la diferencia.
+**Configuración de entrada:** 2 strings de 6 paneles (~2600W cada uno), totalizando **5.28 kWp**.
 
 ---
 
-### 🌤️ Transparencia: una decisión clave
+## 🔋 4. Almacenamiento: Baterías LiFePO₄ (DIY)
 
-No quería construir un techo oscuro.
+Para las baterías, huí de las soluciones comerciales "todo en uno" y opté por celdas **LiFePO₄**.
 
-Quería un porche luminoso.
+* **Química Segura:** A diferencia del Ion-Litio (NMC), las LiFePO₄ tienen una estabilidad térmica brutal (no arden espontáneamente).
+* **Configuración 16S:** 16 celdas en serie para un sistema nominal de **48V / 300Ah**.
+* **Ciclo de Vida:** Estimamos ~6000 ciclos. Con descargas superficiales del 20-25%, la vida útil proyectada supera los 15 años.
 
-Los paneles parcialmente transparentes permiten:
-
-* mantener luminosidad
-* no oscurecer la vivienda
-* mejorar la integración estética
-
-No es lo habitual en instalaciones solares, pero en este caso era fundamental.
+### 🛡️ El Guardián: JK BMS con Balanceo Activo
+Para gestionar el banco de baterías utilizo un **JK BMS**. En sistemas de gran capacidad, el **balanceo activo (2A)** es fundamental: no disipa la energía sobrante como calor, sino que la redistribuye entre las celdas, manteniendo la salud del pack a largo plazo.
 
 ---
 
-### 🔁 Bifacial: aprovechar la luz del norte
+## 💰 5. El "Bill of Materials" (BoM)
 
-En Cantabria no hay sol constante, pero sí mucha luz difusa.
+Uno de los mayores secretos en las instalaciones solares es el desglose real de costes. Aquí están mis números:
 
-Los paneles bifaciales aprovechan:
+### Core Fotovoltaico
+* **Paneles (12 u.):** 857 €
+* **Banco Baterías (15kWh aprox):** 1.047 €
+* **Inversor Híbrido 6kW:** 1.263 €
 
-* radiación directa
-* luz reflejada
+### Estructura e Infraestructura
+* **Estructura (Acero/Madera):** ~784 €
+* **Cuadro Eléctrico y Protecciones:** ~252 €
+* **Varios (Cableado, conectores):** ~56 €
 
-No duplican la producción, pero sí suman eficiencia en un entorno donde cada aporte cuenta.
-
----
-
-## ⚡ 3 - Inversor: el equilibrio entre potencia y libertad
-
-El inversor elegido es de Deye, modelo híbrido de 6 kW.
-
----
-
-### ⚖️ Comparativa real
-
-Antes de decidirme, valoré otras opciones:
-
-**Victron Energy**
-
-* calidad excelente
-* muy robusto
-* pero precio elevado
-
-**Huawei**
-
-* buen rendimiento
-* ecosistema cerrado
-* baterías propietarias
+**TOTAL PROYECTO: ~4.300 € – 4.500 €**
 
 ---
 
-### ✅ Por qué elegí Deye
+## 🧠 Conclusión
 
-Porque encajaba con mi filosofía:
+Por el precio de un coche de segunda mano, he conseguido un porche funcional y una planta de generación que cubre el consumo de mi vivienda (~7 kWh/día) casi por completo. 
 
-* híbrido (on-grid + off-grid)
-* admite baterías DIY
-* configurable
-* buena relación calidad/precio
+Pero como ingeniero, el mayor valor no es el ahorro, sino la **comprensión total del sistema**. No es una "caja negra" instalada por terceros; es una herramienta que puedo monitorizar, tunear y mejorar.
 
-Y, sobre todo:
+👉 **Siguiente paso: Del Hardware al Software**
 
-> es una herramienta, no un sistema cerrado.
+Ya tenemos los paneles, el inversor y las celdas. Pero ahora mismo no son más que metal y silicio "mudo". Para que este sistema sea realmente eficiente, necesitamos un cerebro que lo gestione. Te cuento cómo conecté todo este ecosistema a Home Assistant utilizando protocolos industriales (Modbus RS485) y cómo logré que la casa tome sus propias decisiones según el sol que haga en Cantabria.
 
----
-
-### ⚡ Configuración del sistema
-
-* 2 strings de 6 paneles
-* ~2600 W por string
-* Total: ~5200 W
-
-El inversor de 6 kW permite cubrir picos de consumo y deja margen para el futuro (por ejemplo, un coche eléctrico).
-
----
-
-## 🔋 4 - Baterías: almacenamiento y autonomía real
-
-Opté por baterías basadas en LiFePO4.
-
----
-
-### 🧠 Por qué LiFePO₄
-
-No buscaba la máxima densidad energética, sino:
-
-* seguridad
-* estabilidad
-* durabilidad
-
-Este tipo de baterías:
-
-* no presentan riesgo térmico como otras químicas
-* soportan miles de ciclos
-* tienen un coste por kWh muy competitivo
-
----
-
-### 🔧 Configuración
-
-* 16 celdas en serie (16S)
-* 48V
-* ~300 Ah
-
-Una configuración estándar en sistemas off-grid.
-
----
-
-### 🔄 Vida útil en condiciones reales
-
-Sobre el papel:
-
-* 6000 ciclos → ~16 años
-
-En la práctica:
-
-* descargas parciales (~20–25%)
-* menor estrés en la batería
-
-Esto se traduce en:
-
-* más ciclos útiles
-* mayor vida útil
-
-Probablemente antes de que falle, ya existirán alternativas mejores y más baratas.
-
----
-
-## 🔌 5 - BMS: el sistema que mantiene todo en orden
-
-Para la gestión de batería utilizo un JK BMS.
-
----
-
-### 🧠 Función del BMS
-
-* monitorizar cada celda
-* evitar sobrecargas
-* evitar descargas profundas
-* equilibrar el sistema
-
-Porque una batería es tan fuerte como su celda más débil.
-
----
-
-### ⚡ Balanceo activo
-
-Este BMS utiliza balanceo activo (~2A):
-
-* más rápido
-* más eficiente
-* menor pérdida de energía
-
-No es imprescindible, pero sí muy recomendable en configuraciones como esta.
-
----
-
-## ⚡ 6 - Uso real: consumir con criterio
-
-El consumo medio de la vivienda es de unos ~7 kWh diarios.
-
-La clave no es reducir consumo, sino gestionarlo:
-
-* días soleados → electrodomésticos
-* días nublados → consumo más conservador
-
-> No se trata de usar menos energía, sino de usarla en el momento adecuado.
-
----
-
-## 💸 7 - Coste real del proyecto
-
-Una de las cosas que más eché en falta al investigar fue el coste real.
-
-Aquí están los números:
-
-### Sistema solar
-
-* Paneles: 857 €
-* Batería: 1047 €
-* Inversor: 1263 €
-
-### Estructura + eléctrico
-
-* Estructura: ~784 €
-* Sistema eléctrico: ~252 €
-* Otros materiales: ~56 €
-
----
-
-## 💰 8 - Total aproximado
-
-👉 ~4300 – 4500 €
-
----
-
-## 🧠 9 - Conclusión
-
-Con esta inversión he conseguido:
-
-* Un porche funcional
-* Generación solar (~5 kW)
-* Sistema con batería
-* Independencia parcial
-
-Pero lo más importante no es eso.
-
-> Es tener un sistema que entiendo y puedo modificar.
-
----
-
-## 🔜 Siguiente paso
-
-En el siguiente capítulo entraré en la parte más práctica:
-
-👉 construcción, montaje y problemas reales.

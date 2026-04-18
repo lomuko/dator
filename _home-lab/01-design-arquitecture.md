@@ -1,223 +1,81 @@
 ---
-
 layout: single
-title: "Solar Home-Lab (I): Arquitectura del Proyecto"
+title: "Solar Home-Lab I: Arquitectura y Diseño de un Porche Fotovoltaico"
 header:
-  overlay_image: /assets/images/solar/header-diseno.jpg
+  overlay_image: /assets/images/solar/solar1.jpg
+  overlay_color: "#000"
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"
 date: 2026-03-15
 collection: porche-solar
 tags: [solar, homelab, energia, fotovoltaica, autoconsumo]
-excerpt: "Cómo pasé de querer un simple porche a diseñar un sistema solar completo en Cantabria."
+excerpt: "De la necesidad de sombra al reto de la autosuficiencia: cómo diseñé mi infraestructura solar desde cero en el Norte."
 toc: true
 toc_sticky: true
 slug: design-arquitecture
+order: 1
+---
+
+## 🌧️ El origen: El clima como requerimiento técnico
+
+Vivir en **Cantabria** condiciona cualquier proyecto de infraestructura. Aquí, el diseño no es solo estética; es una batalla contra la humedad, la lluvia constante y las rachas de viento de las galernas. 
+
+Necesitábamos un porche por una cuestión de habitabilidad, pero al presupuestar la opción tradicional (teja y madera), surgió la pregunta de ingeniero: 
+> **¿Y si convertimos un tejado 'pasivo' en una unidad de generación de energía 'activa'?**
+
+Al comparar costes, la diferencia entre un porche convencional y uno solar era lo suficientemente estrecha como para que el ROI (retorno de inversión) energético hiciera que la decisión se tomara sola.
 
 ---
 
-## 🌧️ El origen: necesidad real, no capricho
+## 🚫 El rechazo a los "Kits" y la caja negra
 
-Vivo en Cantabria. Y eso, en términos de diseño, condiciona absolutamente todo. La lluvia constante y las galernas de viento. Cuando decidí que necesitaba un porche para casa, la ingeniería se impuso a la tradición.
-
-Aquí llueve. Mucho.
-Y no es solo cuestión de comodidad: necesitábamos un porche para poder usar el exterior durante buena parte del año, proteger la entrada de la casa y ganar un espacio intermedio entre interior y exterior.
-
-La opción tradicional era clara: un porche de teja.
-
-Pero al empezar a pedir precios, me encontré con algo interesante:
-**el coste de un porche convencional no era tan diferente al de uno solar.**
-
-Y ahí cambió todo.
+Como profesional del software, huyo de las soluciones cerradas que no permiten auditoría ni aprendizaje. Los kits solares prefabricados del mercado tenían tres fallos críticos:
+1. **Vendor Lock-in:** Materiales cerrados y sin posibilidad de elegir componentes específicos (como paneles bifaciales de alta eficiencia).
+2. **Sobreprecio:** Pagas un margen alto por una logística simplificada.
+3. **Curva de aprendizaje nula:** Montar un "Lego" no te enseña a optimizar el sistema cuando algo falla.
 
 ---
 
-## ⚡ El cambio de enfoque: de refugio a sistema energético
+## 🏗️ La Estructura Híbrida: Acero y Madera
 
-Si tenía que construir un porche sí o sí…
-¿por qué no convertirlo en algo más?
+El reto era integrar 12 paneles en la fachada principal sin que pareciera una nave industrial. 
 
-Siempre me ha atraído la idea de generar mi propia energía.
-No solo por ahorro, sino por el reto técnico que implica.
-
-Hace tiempo incluso me planteé montar un aerogenerador. Pero en Cantabria eso tiene un problema serio: el viento.
-
-Las galernas aquí no son una broma.
-La idea de ver cómo una racha fuerte podía arrancar la instalación de cuajo me hizo descartarlo completamente.
-
-El porche, sin embargo, era una estructura necesaria.
-Y eso lo convertía en el candidato perfecto para integrar generación solar.
+| Componente | Material | Razón Técnica |
+| :--- | :--- | :--- |
+| **Pilares** | Acero (Tubo 120mm) | Resistencia a la torsión y estabilidad frente a galernas. |
+| **Vigas** | Madera Laminada | Estética, calidez y facilidad para absorber micro-vibraciones. |
+| **Cubierta** | Paneles Vidrio-Vidrio | Transparencia y durabilidad en ambientes húmedos. |
 
 ---
 
-## 🚫 Por qué descarté los kits comerciales
+## ☀️ Paneles Bifaciales y Transparencia
 
-Lo primero que hice fue mirar qué había en el mercado.
+Para no "oscurecer" la casa (un pecado mortal en el Norte), elegí paneles con una **transparencia del 5-6%**. El espacio entre celdas es vidrio, lo que genera una luz tamizada muy agradable.
 
-Y sí, existen soluciones: kits de porches solares prefabricados donde eliges ancho (3, 5, 7 metros…) y te lo envían a casa.
-
-Pero tenían varios problemas:
-
-* Precio elevado
-* Materiales cerrados (sin capacidad de elección)
-* Diseño poco flexible
-* Y sobre todo: **no aprendes nada**
-
-Para mí, eso era clave.
-
-No quería montar un Lego caro.
-Quería entender el sistema desde cero.
-
-Así que descarté completamente esa opción.
+Además, la tecnología **bifacial** es clave aquí:
+* **Luz difusa:** En días nublados, capturan el rebote de luz en el suelo (albedo).
+* **Estética:** Al ser vidrio-vidrio, no tienen el antiestético plástico trasero (backsheet), lo que los hace ideales para verlos desde abajo.
 
 ---
 
-## 🧱 La gran decisión: cómo construir la estructura
+## 📊 Dimensionamiento del Sistema
 
-Aquí fue donde más dudas tuve.
+Mi consumo base es de unos **180 kWh mensuales**. Tras modelar los datos en **PVGIS**, definí el siguiente "stack" energético:
 
-### Opción 1: Todo madera
+### El balance de potencia
+* **Campo Solar:** 12 paneles de 440W → **5.28 kWp** (Potencia Pico).
+* **Inversor:** **6 kW**. 
+* **Estrategia:** El inversor de 6 kW me permite cubrir mis picos de 4 kW y deja margen para una futura carga de Vehículo Eléctrico (EV), todo sin subir el término de potencia contratada de la red.
 
-* Estética muy buena
-* Integración perfecta con la vivienda
-* Pero más mantenimiento y menor robustez estructural
-
-### Opción 2: Todo metal
-
-* Muy resistente y duradero
-* Ideal para soportar carga
-* Pero visualmente demasiado industrial
-
-Y aquí apareció el problema real:
-el porche está en la fachada principal, donde hacemos vida diaria.
-
-No podía ser un “pegote”.
+> **Cálculo estimado:** Autosuficiencia total de febrero a noviembre; apoyo mínimo de red en el trimestre de invierno.
 
 ---
 
-## ⚖️ Solución final: estructura híbrida
+## 🧠 Conclusión: El diseño es el 80% del éxito
 
-Después de muchas vueltas, llegué a una solución intermedia:
+Este proyecto no empezó apretando tornillos, sino analizando datos de consumo y variables climáticas. En el siguiente capítulo, entraremos en el **Hardware**: por qué elegí modelos específicos de inversor y cómo preparé el cuadro de protecciones.
 
-* **Columnas metálicas** → resistencia estructural
-* **Vigas de madera laminada** → estética y calidez
+👉 **Siguiente post: Selección de Hardware y Electrónica.**
 
-Esta combinación me permitía:
-
-* Tener una base sólida
-* Integrar visualmente el porche con la casa
-* Y mantener flexibilidad en el diseño
-
----
-
-## ☀️ La cubierta: no quería un techo, quería luz
-
-Un porche tradicional quita luz a la vivienda.
-Y en el norte, eso es un problema.
-
-No quería oscurecer la casa.
-
-Buscando alternativas encontré paneles solares con una característica muy interesante:
-
-* **ligeramente transparentes (~5–6%)**
-
-Esto se consigue porque entre las celdas hay vidrio en lugar de fondo opaco.
-
-El resultado:
-
-* Dejan pasar parte de la luz
-* Generan energía
-* Y además tienen una estética mucho más limpia
-
----
-
-## 🔋 Por qué elegí paneles bifaciales
-
-Además de la transparencia, opté por paneles **bifaciales**.
-
-Esto significa que:
-
-* Generan energía por la cara superior
-* También por la inferior, aprovechando la luz reflejada
-
-En un entorno como Cantabria, con mucha luz difusa, esto tiene bastante sentido.
-
-Y además:
-
-* Son visualmente más atractivos
-* Encajan mejor en una estructura tipo porche
-
----
-
-## 📊 Dimensionando la instalación
-
-Una vez tenía clara la estructura, tocaba responder a la gran pregunta:
-
-**¿cuánta energía necesito producir?**
-
-Partí de mi consumo real:
-
-* ~180 kWh mensuales
-
-Para estimar la producción utilicé la herramienta PVGIS de la Comisión Europea: [PVGis](https://re.jrc.ec.europa.eu/pvg_tools/en/)
-
-Con estos cálculos:
-
-* Necesitaba aproximadamente **5 kW de instalación**
-
-Esto me permitiría:
-
-* Ser prácticamente autosuficiente de febrero a noviembre
-* Tener un pequeño déficit en invierno (cubierto por la red)
-
----
-
-## 🔌 Elección de potencia y configuración
-
-Decidí montar:
-
-* **12 paneles de ~440 W** que hacen un total de **5,4 kW** de potencia total.
-* Distribuidos en 2 filas de 6 paneles
-
-Dimensiones aproximadas del porche:
-
-* 7 metros de largo
-* 3,5 metros de ancho
-
-En cuanto al inversor:
-
-* Mi casa tiene picos de unos 4 kW
-* Elegí un inversor de **6 kW**
-
-¿Por qué?
-
-Porque me permite:
-
-* Cubrir consumo actual
-* Tener margen futuro (por ejemplo, coche eléctrico)
-
-En la práctica:
-
-* 6 kW del inversor
-* 4 kW apoyo de la red
-
-Sin necesidad de aumentar potencia contratada.
-
----
-
-## 🧠 Conclusión: diseñar antes de construir
-
-Antes de cortar la primera viga, ya tenía claro:
-
-* Qué quería construir
-* Por qué lo quería así
-* Y cómo debía comportarse el sistema
-
-Este proyecto no empezó con herramientas,
-empezó con decisiones.
-
----
-
-👉 En el siguiente capítulo entraré en detalle en el hardware:
-paneles, inversor, baterías y electrónica.
+¿Qué componentes comprar para no depender de ecosistemas cerrados?

@@ -3,7 +3,8 @@
 layout: single
 title: "La Saga del Porche Solar"
 header:
-  overlay_image: /assets/images/solar/header-diseno.jpg
+  overlay_image: /assets/images/solar/porche.jpg
+  overlay_color: "#000"
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"

@@ -2,7 +2,7 @@
 main:
   - title: "Inicio"
     url: /
-  - title: "Resume"
+  - title: "CV"
     url: /resume/
   - title: "Experiencia"
     url: /experience/
@@ -14,7 +14,7 @@ main:
 home_lab_nav:
   - title: "Serie: Solar Home"
     children:
-      - title: "1. Arquitectura del Proyecto"
+      - title: "1. Arquitectura del proyecto"
         url: /home-lab/design-arquitecture/
       - title: "2. Seleccion de hardware"
         url: /home-lab/hardware-selection/
@@ -22,5 +22,6 @@ home_lab_nav:
         url: /home-lab/home-assistant/
       - title: "3. Diseño y estructura"
         url: /home-lab/design-structure/
-      - title: "4. Precio"
+      - title: "4. Precio y conclusiones"
         url: /home-lab/price/
+

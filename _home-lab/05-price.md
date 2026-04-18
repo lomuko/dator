@@ -1,9 +1,8 @@
 ---
-
 layout: single
 title: "Solar Home-Lab (IV): Price"
 header:
-  overlay_image: /assets/images/solar/header-diseno.jpg
+  overlay_image: /assets/images/solar/solar5.jpg
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"
@@ -14,7 +13,6 @@ excerpt: "Cómo pasé de querer un simple porche a diseñar un sistema solar com
 toc: true
 toc_sticky: true
 slug: price
-
 ---
 
 ## 💸 Coste real del proyecto
