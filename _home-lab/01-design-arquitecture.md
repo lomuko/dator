@@ -3,7 +3,6 @@ layout: single
 title: "Solar Home-Lab I: Arquitectura y Diseño de un Porche Fotovoltaico"
 header:
   overlay_image: /assets/images/solar/solar1.jpg
-  overlay_color: "#000"
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"

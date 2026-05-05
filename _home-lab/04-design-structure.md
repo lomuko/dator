@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Solar Home-Lab (IV): Diseño estructural y montaje"
+title: "Solar Home-Lab IV: Diseño estructural y montaje"
 header:
   overlay_image: /assets/images/solar/solar4.jpg
   overlay_filter: 0.5

@@ -20,8 +20,8 @@ home_lab_nav:
         url: /home-lab/hardware-selection/
       - title: "3. Home Assistant"
         url: /home-lab/home-assistant/
-      - title: "3. Diseño y estructura"
+      - title: "4. Diseño y estructura"
         url: /home-lab/design-structure/
-      - title: "4. Precio y conclusiones"
+      - title: "5. Precio y conclusiones"
         url: /home-lab/price/
 

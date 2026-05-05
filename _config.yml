@@ -1,3 +1,4 @@
+
 # Site settings
 title: "davidtor.es"
 name: "David Tortajada"
@@ -9,15 +10,50 @@ description: "Senior Java Engineer & IoT Enthusiast"
 keywords: "Java & Intershop developer"
 meta_author: David Tortajada
 
-remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "contrast" # Puedes probar: air, mint, sunrise, aqua, dark
+search: true
 
-# Plugins necesarios
+# Build settings
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+include:
+  - .htaccess
+  - _pages
+
+exclude:
+  - .vscode/
+  - .github/
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
 plugins:
-  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jemoji
   - jekyll-include-cache
+  - jekyll-remote-theme
+
+twitter_username: username
+github_username: lomuko
 
 author:
   name     : "David Tortajada"
@@ -34,60 +70,47 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:mail@davidtor.es"
-  
-  # Postal address (add as many lines as necessary)
-  address:
-    - line: Santander, Cantabria
-    - line: CP 39100 - SPAIN
-# Google webmaster tools
-google_verify: mknHCRGiTdHQ9SRjRiO15_zQeFFllHgknZDpMsDssJY
 
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify: 1D8E7E0D0A3BD8571B47891FAAB3B944
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/"
 
-
-
-# Configuración de contenidos
 defaults:
+  # _posts
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: single
       author_profile: true
       read_time: true
+      comments: true
       share: true
       related: true
+  # _pages
   - scope:
       path: "_pages"
-      type: _pages
+      type: pages
     values:
       layout: single
       author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
 collections:
   home-lab:
     output: true
     permalink: /home-lab/:slug/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
-
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-
-
-# Credits content
-credits: 
- - Everybody should learn to program a computer because it teaches you how to think. – Steve Jobs
-
-# Build settings
-markdown: kramdown
-permalink: pretty
-
-
-
-exclude:
-  - .vscode/
-  - .github/

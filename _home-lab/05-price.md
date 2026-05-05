@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Solar Home-Lab (IV): Price"
+title: "Solar Home-Lab V: Price"
 header:
   overlay_image: /assets/images/solar/solar5.jpg
   overlay_filter: 0.5
