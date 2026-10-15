@@ -114,4 +114,4 @@ collections:
     permalink: /home-lab/:slug/
 
 # Datos diarios publicados desde Home Assistant (repo de datos publico)
-solar_data_url: https://raw.githubusercontent.com/lomuko/solar-data/main/daily.json
+solar_data_url: https://raw.githubusercontent.com/lomuko/ha_solar_data/main/daily.json
