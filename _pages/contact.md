@@ -11,7 +11,7 @@ Actualmente estoy abierto a nuevas oportunidades como **Senior Java Developer** 
 
 ### Canales de comunicación
 
-* **LinkedIn:** [linkedin.com/in/tu-perfil](https://www.linkedin.com/in/tu-perfil/) (Respondo rápido por aquí).
+* **LinkedIn:** [linkedin.com/in/davidtor](https://www.linkedin.com/in/davidtor) (Respondo rápido por aquí).
 * **Email:** [mail@davidtor.es](mailto:mail@davidtor.es)
 * **GitHub:** [github.com/lomuko](https://github.com/lomuko) (Para ver en qué estoy trabajando ahora).
 

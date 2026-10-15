@@ -1,14 +1,23 @@
 ---
 layout: single
 permalink: /cv-builder/
+noindex: true
+sitemap: false
+search: false
 ---
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Template</title>
     <style>
+        
+        @media (min-width: 1280px) {
+            .page__inner-wrap {
+                min-width: 920px;
+            }
+        }
 
         .cv-container {
             max-width: 800px;
@@ -458,6 +467,7 @@ permalink: /cv-builder/
 <body>
     <div class="cv-container">
         <div class="print-controls">
+            <button class="print-btn" onclick="saveToLocalStorage()">📄 Save</button>
             <button class="print-btn" onclick="printCV()">📄 Print CV / Save as PDF</button>
             <button class="print-btn" style="background: linear-gradient(135deg, #f0ad4e, #ec971f); margin-left: 10px;" onclick="publishCV()">🚀 Publish CV</button>
         </div>
@@ -985,6 +995,7 @@ permalink: /cv-builder/
 
         // Publish CV as static HTML
         function publishCV() {
+            saveToLocalStorage();
             // Clone the current CV
             const cvClone = document.querySelector('.cv-container').cloneNode(true);
             
@@ -1090,6 +1101,20 @@ ${document.querySelector('style').textContent}
         document.addEventListener('DOMContentLoaded', function() {
             initializeEditableElements();
         });
+
+        // Este código guarda el contenido en tu navegador
+        function saveToLocalStorage() {
+            const cvContent = document.querySelector('.cv-container').innerHTML;
+            localStorage.setItem('cvBuilderContent', cvContent);
+        }
+
+        // Y este lo recupera al abrir la página
+        window.onload = function() {
+            const savedContent = localStorage.getItem('cvBuilderContent');
+            if (savedContent) {
+                document.querySelector('.cv-container').innerHTML = savedContent;
+            }
+        }
     </script>
 </body>
 </html>

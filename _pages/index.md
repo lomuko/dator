@@ -14,7 +14,7 @@ header:
 
 Bienvenido a mi espacio personal. Soy un ingeniero de software que cree en la **simplicidad**, la **mantenibilidad** y el **aprendizaje continuo**. 
 
-**Senior Java Developer especializado en e-commerce**, con más de 10 años de experiencia construyendo y manteniendo plataformas para empresas internacionales.
+**Senior Java Developer especializado en e-commerce**, con más de 15 años de experiencia construyendo y manteniendo plataformas para empresas internacionales.
 
 Trabajo principalmente con **Java, Spring y soluciones e-commerce como Intershop**, ayudando a equipos a escalar sistemas complejos y mejorar su rendimiento. Actualmente estoy enfocado en modernizar mi stack tecnológico hacia **Java 17/21** y **Spring Boot 3**.
 
@@ -67,7 +67,7 @@ Aquí comparto lo que estoy haciendo últimamente: aprendizaje, pruebas técnica
 * **Energy Intelligence:** Optimizando el consumo de mi instalación solar mediante scripts personalizados en Home Assistant y monitorización de datos en tiempo real.
 * **Clean Code:** Siempre priorizando soluciones legibles sobre soluciones complejas.
 
-👉 [Ver más artículos →](/posts/)
+👉 [Ver la serie Solar Home →](/home-lab/)
 
 ---
 

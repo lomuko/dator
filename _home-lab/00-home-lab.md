@@ -14,7 +14,7 @@ permalink: /home-lab/
 ---
 
 ## El Sistema
-Instalación de 5.4 kW con baterías DIY. Automatización integral mediante **Home Assistant**.
+Instalación de 5,4 kWp (12 paneles) con baterías DIY. Automatización integral mediante **Home Assistant**.
 
 ## Stack Tecnológico
 * **Control:** Home Assistant OS en Raspberry Pi / NUC.

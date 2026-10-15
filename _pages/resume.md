@@ -5,7 +5,7 @@ permalink: /resume/
 author_profile: true
 ---
 
-## Senior Java Engineer | E-commerce Expert
+## Senior Java Developer | E-commerce Expert
 
 Con más de 15 años de experiencia, he construido y optimizado plataformas de comercio electrónico para marcas globales. Mi enfoque une la robustez de las arquitecturas empresariales con la agilidad del desarrollo moderno.
 
@@ -28,7 +28,7 @@ Con más de 15 años de experiencia, he construido y optimizado plataformas de c
 
 Tras años en consultoría para grandes retailers, me encuentro en una fase de evolución técnica:
 * **Modern Java:** Implementación de arquitecturas actuales con **Java 17/21** y **Spring Boot 3**.
-* **Applied IoT (Home Lab):** Diseño integral de un ecosistema energético con **5.5kW de potencia solar** y almacenamiento DIY.
+* **Applied IoT (Home Lab):** Diseño integral de un ecosistema energético con **5,28 kWp de potencia solar** y almacenamiento DIY.
 * **Automatización:** Programación de lógica de control en **Home Assistant** (YAML, Python) para la gestión inteligente de consumos.
     * *Más detalles en mi sección [Home Lab](/home-lab/)*.
 

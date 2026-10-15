@@ -2,12 +2,12 @@
 # Site settings
 title: "davidtor.es"
 name: "David Tortajada"
-subtitle: "Senior Backend Engineer"
+subtitle: "Senior Java Developer"
 email: mail@davidtor.es
 phone: +34655579880
 url: https://davidtor.es
-description: "Senior Java Engineer & IoT Enthusiast"
-keywords: "Java & Intershop developer"
+description: "Senior Java Developer especializado en e-commerce (Intershop) y entusiasta de IoT y energía solar DIY"
+keywords: "Senior Java Developer, Intershop, e-commerce, Spring Boot, Solr, Home Assistant, energía solar DIY, Cantabria"
 meta_author: David Tortajada
 
 minimal_mistakes_skin: "contrast" # Puedes probar: air, mint, sunrise, aqua, dark
@@ -52,7 +52,6 @@ plugins:
   - jekyll-include-cache
   - jekyll-remote-theme
 
-twitter_username: username
 github_username: lomuko
 
 author:
@@ -73,15 +72,12 @@ author:
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/lomuko"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/davidtor"
 
 defaults:
   # _posts
