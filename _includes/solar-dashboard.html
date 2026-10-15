@@ -105,8 +105,8 @@
     });
     var cross = el('line', { y1: m.t, y2: m.t + ph, stroke: 'var(--axis)', 'stroke-width': 1, visibility: 'hidden' }, null, 1); svg.appendChild(cross);
     days.forEach(function (d, i) {
-      var r = el('rect', { x: m.l + slot * i, y: m.t, width: slot, height: ph, fill: 'transparent', tabindex: n <= 31 ? 0 : -1, 'aria-label': fmtDate(d.date, 1) + ': ' + series.map(function (s, k) { return s.name + ' ' + nf.format(vals[i][k]); }).join(', ') }, null, 1);
-      function on() { cross.setAttribute('x1', xc(i)); cross.setAttribute('x2', xc(i)); cross.setAttribute('visibility', 'visible'); showTip(fig, null, series.map(function (s, k) { return [s.name, nf.format(vals[i][k]) + ' kWh', s.color]; }), fmtDate(d.date, 1), xc(i) + 17); }
+      var r = el('rect', { x: m.l + slot * i, y: m.t, width: slot, height: ph, fill: 'transparent', tabindex: n <= 31 ? 0 : -1, 'aria-label': fmtDate(d.date, 1) + ': ' + series.map(function (s) { var raw = s.get(d); return s.name + ' ' + (raw == null ? '—' : nf.format(raw)); }).join(', ') }, null, 1);
+      function on() { cross.setAttribute('x1', xc(i)); cross.setAttribute('x2', xc(i)); cross.setAttribute('visibility', 'visible'); showTip(fig, null, series.map(function (s) { var raw = s.get(d); return [s.name, raw == null ? '—' : nf.format(raw) + ' kWh', s.color]; }), fmtDate(d.date, 1), xc(i) + 17); }
       function off() { cross.setAttribute('visibility', 'hidden'); hideTip(); }
       r.addEventListener('pointermove', on); r.addEventListener('pointerleave', off); r.addEventListener('focus', on); r.addEventListener('blur', off);
       svg.appendChild(r);
