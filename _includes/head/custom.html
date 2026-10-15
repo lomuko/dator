@@ -1,1 +1,9 @@
 {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+{%- if page.ref -%}
+  {%- assign hl = site.pages | where: 'ref', page.ref -%}
+  {%- for p in hl -%}
+<link rel="alternate" hreflang="{% if p.lang == 'en' %}en{% else %}es{% endif %}" href="{{ p.url | absolute_url }}">
+  {%- endfor -%}
+  {%- assign es_page = hl | where_exp: 'p', "p.lang != 'en'" | first -%}
+  {%- if es_page -%}<link rel="alternate" hreflang="x-default" href="{{ es_page.url | absolute_url }}">{%- endif -%}
+{%- endif -%}

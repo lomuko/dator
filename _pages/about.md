@@ -1,4 +1,5 @@
 ---
+ref: about
 permalink: /about/
 title: "Sobre mí"
 layout: single

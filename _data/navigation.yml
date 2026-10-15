@@ -25,3 +25,15 @@ home_lab_nav:
       - title: "5. Precio y conclusiones"
         url: /home-lab/price/
 
+
+main_en:
+  - title: "Home"
+    url: /en/
+  - title: "Resume"
+    url: /en/resume/
+  - title: "Experience"
+    url: /en/experience/
+  - title: "Solar Home (ES)"
+    url: /home-lab/
+  - title: "Contact"
+    url: /en/contact/

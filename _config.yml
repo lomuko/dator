@@ -12,6 +12,7 @@ meta_author: David Tortajada
 
 minimal_mistakes_skin: "contrast" # Puedes probar: air, mint, sunrise, aqua, dark
 search: true
+locale: "es-ES" # idioma por defecto; las páginas en inglés usan locale: en-US
 
 # Build settings
 markdown: kramdown

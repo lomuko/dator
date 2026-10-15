@@ -1,4 +1,5 @@
 ---
+ref: resume
 layout: single
 title: "Trayectoria Profesional"
 permalink: /resume/
