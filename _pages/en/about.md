@@ -4,6 +4,7 @@ lang: en
 locale: en-US
 permalink: /en/about/
 title: "About me"
+description: "About David Tortajada: Senior Java Developer with 15+ years in e-commerce (Intershop, Solr) and builder of a DIY solar porch in Cantabria, Spain."
 layout: single
 author_profile: true
 ---

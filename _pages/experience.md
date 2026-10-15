@@ -1,5 +1,6 @@
 ---
 ref: experience
+description: "Experiencia profesional de David Tortajada: más de 15 años como Java Developer en plataformas e-commerce con Intershop, Solr, Oracle y MSSQL."
 layout: single
 title: "Experiencia Profesional"
 permalink: /experience/

@@ -2,6 +2,7 @@
 ref: home
 lang: en
 locale: en-US
+description: "David Tortajada, Senior Java Developer specialized in e-commerce (Intershop, Spring Boot). Personal site, experience and DIY solar project."
 layout: single
 title: "David Tortajada"
 excerpt: "Senior Java Developer & E-commerce Consultant"

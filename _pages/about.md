@@ -2,6 +2,7 @@
 ref: about
 permalink: /about/
 title: "Sobre mí"
+description: "Sobre David Tortajada: Senior Java Developer con más de 15 años en e-commerce (Intershop, Solr) y constructor de un porche solar DIY en Cantabria."
 layout: single
 author_profile: true
 ---

@@ -1,5 +1,6 @@
 ---
 ref: contact
+description: "Contacta con David Tortajada, Senior Java Developer y consultor e-commerce, disponible en remoto o en Cantabria."
 layout: single
 title: Contacto
 permalink: /contact/

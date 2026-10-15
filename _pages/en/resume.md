@@ -2,6 +2,7 @@
 ref: resume
 lang: en
 locale: en-US
+description: "David Tortajada's professional profile: Senior Java Developer, Intershop and e-commerce expert, working with Java 17/21 and Spring Boot 3."
 layout: single
 title: "Professional Profile"
 permalink: /en/resume/

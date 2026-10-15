@@ -2,6 +2,7 @@
 ref: contact
 lang: en
 locale: en-US
+description: "Contact David Tortajada, Senior Java Developer and e-commerce consultant, available for remote work or in Cantabria, Spain."
 layout: single
 title: Contact
 permalink: /en/contact/

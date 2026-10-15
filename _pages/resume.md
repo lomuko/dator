@@ -1,5 +1,6 @@
 ---
 ref: resume
+description: "Perfil profesional de David Tortajada: Senior Java Developer, experto en Intershop y e-commerce, con stack Java 17/21 y Spring Boot 3."
 layout: single
 title: "Trayectoria Profesional"
 permalink: /resume/

@@ -12,6 +12,7 @@ meta_author: David Tortajada
 
 minimal_mistakes_skin: "contrast" # Puedes probar: air, mint, sunrise, aqua, dark
 search: true
+og_image: /assets/images/header.jpg # imagen al compartir en redes
 locale: "es-ES" # idioma por defecto; las páginas en inglés usan locale: en-US
 
 # Build settings
