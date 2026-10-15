@@ -1,0 +1,165 @@
+{%- comment -%} Panel solar. Uso: {% include solar-dashboard.html lang="es" %}. Lee site.solar_data_url (JSON diario publicado por solar_export). {%- endcomment -%}
+<div id="solar-dash" class="solar-root" data-lang="{{ include.lang | default: 'es' }}" data-src="{{ site.solar_data_url }}">
+<style>
+.solar-root{color-scheme:light;--s1:#fcfcfb;--tp:#0b0b0b;--ts:#52514e;--tm:#898781;--grid:#e1e0d9;--axis:#c3c2b7;--bd:rgba(11,11,11,.10);--c1:#2a78d6;--c2:#eb6834;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--tp);margin:1.5em 0}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .solar-root{color-scheme:dark;--s1:#1a1a19;--tp:#f0efec;--ts:#c3c2b7;--grid:#2c2c2a;--axis:#383835;--bd:rgba(255,255,255,.10);--c1:#3987e5;--c2:#d95926}}
+:root[data-theme="dark"] .solar-root{color-scheme:dark;--s1:#1a1a19;--tp:#f0efec;--ts:#c3c2b7;--grid:#2c2c2a;--axis:#383835;--bd:rgba(255,255,255,.10);--c1:#3987e5;--c2:#d95926}
+.solar-root *{box-sizing:border-box}
+.solar-root .sd-filters{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.solar-root .sd-filters button,.solar-root .sd-toggle{font:inherit;font-size:.85rem;padding:.35rem .8rem;border:1px solid var(--bd);background:var(--s1);color:var(--tp);border-radius:6px;cursor:pointer}
+.solar-root button[aria-pressed="true"]{border-color:var(--c1);font-weight:600}
+.solar-root button:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+.solar-root .sd-hero{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem 1.25rem;margin-bottom:.75rem}
+.solar-root .sd-hero b{display:block;font-size:3.25rem;line-height:1.1;font-weight:600}
+.solar-root .sd-hero span,.solar-root .sd-tile span{color:var(--ts);font-size:.9rem}
+.solar-root .sd-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.75rem;margin-bottom:1rem}
+.solar-root .sd-tile{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:.7rem 1rem}
+.solar-root .sd-tile b{display:block;font-size:1.5rem;font-weight:600}
+.solar-root figure{position:relative;margin:0 0 1rem;background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem}
+.solar-root figcaption{font-weight:600;margin-bottom:.15rem}
+.solar-root figcaption+p{margin:0 0 .5rem;color:var(--ts);font-size:.85rem}
+.solar-root svg{display:block;width:100%;height:auto;overflow:visible}
+.solar-root svg text{fill:var(--tm);font-size:11px;font-family:inherit}
+.solar-root .sd-legend{display:flex;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:var(--ts);margin-bottom:.5rem}
+.solar-root .sd-legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:.4rem;vertical-align:-1px}
+.solar-root .sd-legend i.ln{height:2px;border-radius:0;vertical-align:3px;width:16px}
+.solar-root .sd-tip{position:absolute;pointer-events:none;background:var(--s1);color:var(--tp);border:1px solid var(--axis);border-radius:8px;padding:.5rem .7rem;font-size:.85rem;box-shadow:0 2px 8px rgba(0,0,0,.15);z-index:2;white-space:nowrap}
+.solar-root .sd-tip div{display:flex;align-items:center;gap:.5rem}
+.solar-root .sd-tip em{font-style:normal;color:var(--ts)}
+.solar-root .sd-tip s{display:inline-block;width:12px;height:2px;text-decoration:none}
+.solar-root .sd-table{overflow-x:auto;max-height:420px;margin-top:.75rem}
+.solar-root .sd-table table{width:100%;border-collapse:collapse;font-size:.85rem;font-variant-numeric:tabular-nums}
+.solar-root .sd-table th,.solar-root .sd-table td{padding:.3rem .6rem;border-bottom:1px solid var(--grid);text-align:right}
+.solar-root .sd-table th:first-child,.solar-root .sd-table td:first-child{text-align:left}
+.solar-root .sd-empty,.solar-root .sd-note{color:var(--ts);font-size:.9rem}
+.solar-root .sd-loading{opacity:.55;transition:opacity .15s}
+@media (max-width:480px){.solar-root .sd-hero b{font-size:3rem}}
+</style>
+<div class="sd-body"><p class="sd-empty" id="sd-msg">…</p></div>
+<script>
+(function () {
+  var root = document.getElementById('solar-dash'), body = root.querySelector('.sd-body');
+  var lang = root.getAttribute('data-lang') === 'en' ? 'en' : 'es', src = root.getAttribute('data-src');
+  var L = {
+    es: { r7: '7 días', r30: '30 días', r90: '90 días', all: 'Todo', hero: 'kWh generados', gen: 'Generación solar diaria', genSub: 'kWh por día frente a la previsión de Solcast', pv: 'Generada', fc: 'Previsión', mix: 'De dónde viene lo que consumo', mixSub: 'kWh por día', sol: 'Solar y batería', grid: 'Red',
+      t1: 'Consumo', t2: 'Comprado a la red', t3: 'Vertido a la red', t4: 'Cubierto con solar', tbl: 'Ver tabla', chart: 'Ver gráficas', date: 'Fecha', empty: 'Aún no hay datos publicados. Vuelve en unos días.', err: 'No se han podido cargar los datos.', updated: 'Última actualización:', note: 'Totales diarios de mi instalación (5,28 kWp), publicados cada madrugada. Sin datos en tiempo real.', days: 'días' },
+    en: { r7: '7 days', r30: '30 days', r90: '90 days', all: 'All', hero: 'kWh generated', gen: 'Daily solar generation', genSub: 'kWh per day versus the Solcast forecast', pv: 'Generated', fc: 'Forecast', mix: 'Where my consumption comes from', mixSub: 'kWh per day', sol: 'Solar and battery', grid: 'Grid',
+      t1: 'Consumption', t2: 'Bought from grid', t3: 'Exported to grid', t4: 'Covered by solar', tbl: 'Show table', chart: 'Show charts', date: 'Date', empty: 'No data published yet. Check back in a few days.', err: 'Could not load the data.', updated: 'Last updated:', note: 'Daily totals from my 5.28 kWp installation, published every night. No real-time data.', days: 'days' }
+  }[lang];
+  var nf = new Intl.NumberFormat(lang === 'en' ? 'en-GB' : 'es-ES', { maximumFractionDigits: 1 });
+  var NS = 'http://www.w3.org/2000/svg', all = [], range = 30, asTable = false, tip, timer;
+  function el(tag, attrs, text, ns) { var e = ns ? document.createElementNS(NS, tag) : document.createElement(tag); for (var k in (attrs || {})) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
+  function sum(a, f) { return a.reduce(function (s, d) { return s + (+d[f] || 0); }, 0); }
+  function fmtDate(s, long) { return new Date(s + 'T12:00:00').toLocaleDateString(lang === 'en' ? 'en-GB' : 'es-ES', long ? { day: 'numeric', month: 'long', year: 'numeric' } : { day: 'numeric', month: 'short' }); }
+  function niceStep(v) { if (v <= 0) return 1; var p = Math.pow(10, Math.floor(Math.log10(v))), n = v / p, c = [1, 2, 2.5, 4, 5, 10]; for (var i = 0; i < c.length; i++) if (n <= c[i] + 1e-9) return c[i] * p; return 10 * p; }
+  function slice() { return range ? all.slice(-range) : all; }
+  function showTip(fig, e, rows, title, x) {
+    hideTip();
+    tip = el('div', { 'class': 'sd-tip', role: 'status' });
+    tip.appendChild(el('strong', null, title));
+    rows.forEach(function (r) { var d = el('div'), k = el('s'); k.style.background = r[2]; d.appendChild(k); d.appendChild(el('b', null, r[1])); d.appendChild(el('em', null, r[0])); tip.appendChild(d); });
+    fig.appendChild(tip);
+    var fr = fig.getBoundingClientRect(), left = Math.min(Math.max(x - tip.offsetWidth / 2, 4), fr.width - tip.offsetWidth - 4);
+    tip.style.left = left + 'px'; tip.style.top = '2.2rem';
+  }
+  function hideTip() { if (tip && tip.parentNode) tip.parentNode.removeChild(tip); tip = null; }
+  // series: [{name,color,field|fn,type:'bar'|'line'}]; stacked bars when stack=true
+  function chart(title, sub, days, series, stack) {
+    var fig = el('figure'), W = Math.max(root.clientWidth - 34, 280), H = 240, m = { l: 38, r: 8, t: 10, b: 26 };
+    fig.appendChild(el('figcaption', null, title)); fig.appendChild(el('p', null, sub));
+    var lg = el('div', { 'class': 'sd-legend' });
+    series.forEach(function (s) { var d = el('span'), i = el('i', { 'class': s.type === 'line' ? 'ln' : '' }); i.style.background = s.color; d.appendChild(i); d.appendChild(document.createTextNode(s.name)); lg.appendChild(d); });
+    fig.appendChild(lg);
+    var vals = days.map(function (d) { return series.map(function (s) { return Math.max(+s.get(d) || 0, 0); }); });
+    var top = stack ? Math.max.apply(null, vals.map(function (v) { return v.reduce(function (a, b) { return a + b; }, 0); }))
+                    : Math.max.apply(null, [0].concat([].concat.apply([], vals)));
+    var ystep = niceStep(top * 1.03 / 4), ymax = ystep * 4, pw = W - m.l - m.r, ph = H - m.t - m.b, n = days.length, slot = pw / n;
+    var bw = Math.min(24, Math.max(slot - (slot > 6 ? 2 : 0), 1)), gap = 2;
+    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': title }, null, 1);
+    var y = function (v) { return m.t + ph - v / ymax * ph; }, xc = function (i) { return m.l + slot * (i + 0.5); };
+    for (var t = 0; t <= 4; t++) {
+      var v = ymax / 4 * t;
+      svg.appendChild(el('line', { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: t ? 'var(--grid)' : 'var(--axis)', 'stroke-width': 1 }, null, 1));
+      svg.appendChild(el('text', { x: m.l - 6, y: y(v) + 4, 'text-anchor': 'end' }, nf.format(v), 1));
+    }
+    var step = Math.max(1, Math.ceil(n / Math.max(Math.floor(pw / 64), 1)));
+    days.forEach(function (d, i) { if (i % step === 0 || i === n - 1 && n - 1 - (Math.floor((n - 1) / step) * step) >= step / 2) svg.appendChild(el('text', { x: xc(i), y: H - 8, 'text-anchor': 'middle' }, fmtDate(d.date), 1)); });
+    function topRound(x, y0, w, h, r) { r = Math.min(r, h, w / 2); return 'M' + x + ',' + (y0 + h) + 'V' + (y0 + r) + 'Q' + x + ',' + y0 + ' ' + (x + r) + ',' + y0 + 'H' + (x + w - r) + 'Q' + (x + w) + ',' + y0 + ' ' + (x + w) + ',' + (y0 + r) + 'V' + (y0 + h) + 'Z'; }
+    days.forEach(function (d, i) {
+      var acc = 0;
+      series.forEach(function (s, k) {
+        if (s.type === 'line') return;
+        var v = vals[i][k]; if (!v) return;
+        var h = v / ymax * ph, base = stack ? acc : 0, last = !stack || k === lastBar(series, vals[i]);
+        var yy = y(base + v), hh = Math.max(h - (stack && base ? gap : 0), 1);
+        if (stack && base) { /* hueco de 2px respecto al segmento inferior */ }
+        svg.appendChild(el('path', { d: last ? topRound(xc(i) - bw / 2, yy, bw, hh, 4) : 'M' + (xc(i) - bw / 2) + ',' + yy + 'h' + bw + 'v' + hh + 'h' + (-bw) + 'Z', fill: s.color }, null, 1));
+        acc += v;
+      });
+    });
+    series.forEach(function (s, k) {
+      if (s.type !== 'line') return;
+      var pts = days.map(function (d, i) { return vals[i][k] ? xc(i) + ',' + y(vals[i][k]) : null; }).filter(Boolean);
+      if (pts.length > 1) svg.appendChild(el('polyline', { points: pts.join(' '), fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, null, 1));
+      if (n <= 31) days.forEach(function (d, i) { if (vals[i][k]) { svg.appendChild(el('circle', { cx: xc(i), cy: y(vals[i][k]), r: 4, fill: s.color, stroke: 'var(--s1)', 'stroke-width': 2 }, null, 1)); } });
+    });
+    var cross = el('line', { y1: m.t, y2: m.t + ph, stroke: 'var(--axis)', 'stroke-width': 1, visibility: 'hidden' }, null, 1); svg.appendChild(cross);
+    days.forEach(function (d, i) {
+      var r = el('rect', { x: m.l + slot * i, y: m.t, width: slot, height: ph, fill: 'transparent', tabindex: n <= 31 ? 0 : -1, 'aria-label': fmtDate(d.date, 1) + ': ' + series.map(function (s, k) { return s.name + ' ' + nf.format(vals[i][k]); }).join(', ') }, null, 1);
+      function on() { cross.setAttribute('x1', xc(i)); cross.setAttribute('x2', xc(i)); cross.setAttribute('visibility', 'visible'); showTip(fig, null, series.map(function (s, k) { return [s.name, nf.format(vals[i][k]) + ' kWh', s.color]; }), fmtDate(d.date, 1), xc(i) + 17); }
+      function off() { cross.setAttribute('visibility', 'hidden'); hideTip(); }
+      r.addEventListener('pointermove', on); r.addEventListener('pointerleave', off); r.addEventListener('focus', on); r.addEventListener('blur', off);
+      svg.appendChild(r);
+    });
+    fig.appendChild(svg);
+    return fig;
+  }
+  function lastBar(series, v) { for (var k = series.length - 1; k >= 0; k--) if (series[k].type !== 'line' && v[k]) return k; return -1; }
+  function table(days) {
+    var wrap = el('div', { 'class': 'sd-table' }), t = el('table'), h = el('tr');
+    var cols = [['date', L.date], ['pv_kwh', L.pv], ['forecast_kwh', L.fc], ['load_kwh', L.t1], ['grid_import_kwh', L.t2], ['grid_export_kwh', L.t3]];
+    cols.forEach(function (c) { h.appendChild(el('th', { scope: 'col' }, c[1])); }); t.appendChild(el('thead')).appendChild(h);
+    var tb = el('tbody');
+    days.slice().reverse().forEach(function (d) { var r = el('tr'); cols.forEach(function (c, i) { r.appendChild(el('td', null, i === 0 ? fmtDate(d.date, 1) : d[c[0]] == null ? '—' : nf.format(d[c[0]]))); }); tb.appendChild(r); });
+    t.appendChild(tb); wrap.appendChild(t); return wrap;
+  }
+  function render() {
+    var days = slice(); body.innerHTML = '';
+    var f = el('div', { 'class': 'sd-filters', role: 'group' });
+    [[7, L.r7], [30, L.r30], [90, L.r90], [0, L.all]].forEach(function (r) {
+      var b = el('button', { type: 'button', 'aria-pressed': String(range === r[0]) }, r[1]);
+      b.addEventListener('click', function () { range = r[0]; render(); }); f.appendChild(b);
+    });
+    var tg = el('button', { type: 'button', 'class': 'sd-toggle', 'aria-pressed': String(asTable), style: 'margin-left:auto' }, asTable ? L.chart : L.tbl);
+    tg.addEventListener('click', function () { asTable = !asTable; render(); }); f.appendChild(tg);
+    body.appendChild(f);
+    var pv = sum(days, 'pv_kwh'), load = sum(days, 'load_kwh'), imp = sum(days, 'grid_import_kwh'), exp = sum(days, 'grid_export_kwh');
+    var hero = el('div', { 'class': 'sd-hero' }); hero.appendChild(el('b', null, nf.format(Math.round(pv))));
+    hero.appendChild(el('span', null, L.hero + ' · ' + days.length + ' ' + L.days)); body.appendChild(hero);
+    var tiles = el('div', { 'class': 'sd-tiles' });
+    [[L.t1, nf.format(Math.round(load)) + ' kWh'], [L.t2, nf.format(Math.round(imp)) + ' kWh'], [L.t3, nf.format(Math.round(exp)) + ' kWh'],
+     [L.t4, load > 0 ? Math.round(Math.max(0, 1 - imp / load) * 100) + ' %' : '—']].forEach(function (t) {
+      var d = el('div', { 'class': 'sd-tile' }); d.appendChild(el('span', null, t[0])); d.appendChild(el('b', null, t[1])); tiles.appendChild(d); });
+    body.appendChild(tiles);
+    var c1 = getComputedStyle(root).getPropertyValue('--c1').trim(), c2 = getComputedStyle(root).getPropertyValue('--c2').trim();
+    if (asTable) body.appendChild(table(days));
+    else {
+      body.appendChild(chart(L.gen, L.genSub, days, [
+        { name: L.pv, color: c1, type: 'bar', get: function (d) { return d.pv_kwh; } },
+        { name: L.fc, color: c2, type: 'line', get: function (d) { return d.forecast_kwh; } }], false));
+      body.appendChild(chart(L.mix, L.mixSub, days, [
+        { name: L.sol, color: c1, type: 'bar', get: function (d) { return (d.load_kwh || 0) - (d.grid_import_kwh || 0); } },
+        { name: L.grid, color: c2, type: 'bar', get: function (d) { return d.grid_import_kwh; } }], true));
+    }
+    body.appendChild(el('p', { 'class': 'sd-note' }, L.note + (window.__sdUpdated ? ' ' + L.updated + ' ' + fmtDate(window.__sdUpdated.slice(0, 10), 1) : '')));
+  }
+  fetch(src, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) {
+    all = (j.days || []).filter(function (d) { return d && d.date; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    window.__sdUpdated = j.updated || '';
+    if (!all.length) { body.innerHTML = ''; body.appendChild(el('p', { 'class': 'sd-empty' }, L.empty)); return; }
+    render();
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (!asTable) render(); }, 150); });
+  }).catch(function () { body.innerHTML = ''; body.appendChild(el('p', { 'class': 'sd-empty' }, L.err)); });
+})();
+</script>
+</div>
