@@ -8,6 +8,8 @@ main:
     url: /experience/
   - title: "Solar Home"
     url: /home-lab/
+  - title: "Datos solar"
+    url: /solar-data/
   - title: "Sobre mí"
     url: /about/
   - title: "Contacto"
@@ -37,6 +39,8 @@ main_en:
     url: /en/experience/
   - title: "Solar Home (ES)"
     url: /home-lab/
+  - title: "Solar data"
+    url: /en/solar-data/
   - title: "About"
     url: /en/about/
   - title: "Contact"
