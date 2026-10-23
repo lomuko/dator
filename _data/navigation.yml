@@ -8,6 +8,8 @@ main:
     url: /experience/
   - title: "Solar Home"
     url: /home-lab/
+  - title: "Blog"
+    url: /blog/
   - title: "Datos solar"
     url: /solar-data/
   - title: "Sobre mí"
@@ -28,6 +30,16 @@ home_lab_nav:
         url: /home-lab/design-structure/
       - title: "5. Precio y conclusiones"
         url: /home-lab/price/
+      - title: "6. Baterías DIY desde cero"
+        url: /home-lab/baterias-diy/
+      - title: "7. Home Assistant por RS485"
+        url: /home-lab/home-assistant-rs485/
+      - title: "8. Protecciones y cableado"
+        url: /home-lab/protecciones-cableado/
+      - title: "9. Automatizaciones con excedentes"
+        url: /home-lab/automatizaciones-excedentes/
+      - title: "10. Legalización"
+        url: /home-lab/legalizacion/
 
 
 main_en:
