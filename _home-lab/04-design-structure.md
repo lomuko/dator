@@ -69,4 +69,4 @@ Mi instalación sigue un esquema pensado al detalle para ser resiliente:
 
 La estructura no solo aguanta el peso y el viento; ha sobrevivido a errores de montaje y problemas logísticos. Ver el porche terminado, estanco y funcionando después de haber cortado la luz de mi propia casa y de que me robaran un inversor, hace que el resultado sea mucho más satisfactorio.
 
-👉 **[Solar Home-Lab (V): Precio, amortización y conclusiones](/home-lab/precio-final/)**
+👉 **[Solar Home-Lab (V): Precio, amortización y conclusiones](/home-lab/price/)**

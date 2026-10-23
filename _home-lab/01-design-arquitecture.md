@@ -64,10 +64,12 @@ Mi consumo base es de unos **180 kWh mensuales**. Tras modelar los datos en **PV
 
 ### El balance de potencia
 * **Campo Solar:** 12 paneles de 440W → **5.28 kWp** (Potencia Pico).
-* **Inversor:** **6 kW**. 
-* **Estrategia:** El inversor de 6 kW me permite cubrir mis picos de 4 kW y deja margen para una futura carga de Vehículo Eléctrico (EV), todo sin subir el término de potencia contratada de la red.
+* **Inversor:** **8 kW**. 
+* **Estrategia:** El inversor de 8 kW me permite cubrir mis picos de 4 kW y deja margen para una futura carga de Vehículo Eléctrico (EV), todo sin subir el término de potencia contratada de la red.
 
 > **Cálculo estimado:** Autosuficiencia total de febrero a noviembre; apoyo mínimo de red en el trimestre de invierno.
+
+> 📈 **Actualización (octubre de 2026) con datos reales:** de abril a septiembre no compré **ni un kWh** a la red, y en octubre solo unas décimas al día. Lo que sí falló fue mi estimación de consumo: los datos dicen que la casa gasta **8,5–10 kWh al día** (unos 260–300 kWh al mes), bastante más que los 180 kWh que calculé. Falta ver el invierno. Los datos, día a día, están en [Mi porche solar en datos](/solar-data/), y el análisis completo en [Cómo dimensionar una instalación solar](/energia-solar/dimensionar-instalacion-solar/).
 
 ---
 

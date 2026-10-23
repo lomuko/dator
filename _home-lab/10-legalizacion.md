@@ -6,7 +6,7 @@ header:
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"
-date: 2026-10-23
+date: 2026-12-04
 collection: porche-solar
 tags: [solar, autoconsumo, legalizacion, normativa, compensacion, cantabria, irpf]
 excerpt: "Sin excedentes o con compensación, CIE, CAU, ayuntamiento y deducciones: el papeleo del autoconsumo explicado para quien lo ha montado con sus manos."

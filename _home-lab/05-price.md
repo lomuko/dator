@@ -94,6 +94,21 @@ Aquí dejo mis números sin maquillar.
 
 ---
 
+## 📊 Y en la práctica: siete meses de datos
+
+Desde marzo de 2026, Home Assistant publica cada noche los totales del día (lo cuento en [este post](/programacion/datos-home-assistant-web-estatica/)). Los números de abril a octubre:
+
+| | Media diaria |
+| :--- | ---: |
+| Consumo de la casa | 8,5–10 kWh |
+| Producción solar aprovechada | 9,5–11 kWh |
+| Comprado a la red (abril–septiembre) | **0 kWh** |
+| Comprado a la red (octubre) | ~0,2 kWh |
+
+Medio año sin comprar electricidad. El invierno en Cantabria será la prueba de verdad; lo iré actualizando en [Mi porche solar en datos](/solar-data/).
+
+---
+
 ## 🧠 Reflexión
 
 Por este precio he conseguido:

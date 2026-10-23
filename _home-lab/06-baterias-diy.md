@@ -6,7 +6,7 @@ header:
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"
-date: 2026-10-23
+date: 2026-09-14
 collection: porche-solar
 tags: [solar, homelab, baterias, lifepo4, diy, jk-bms, deye, autoconsumo]
 excerpt: "De 16 celdas sueltas a una batería de 15 kWh por la mitad de precio que una comercial: compra, balanceo, compresión, BMS y conexión al inversor."

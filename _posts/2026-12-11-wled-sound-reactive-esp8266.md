@@ -24,7 +24,7 @@ Por dentro no hay nada exótico: una tira de LEDs direccionables, un **ESP8266**
 
 | Pieza | Qué uso |
 | :--- | :--- |
-| **Pieza impresa** | *(por completar: modelo y enlace)* |
+| **Pieza impresa** | Una pieza impresa en 3D (STL) hecha para alojar los LEDs *(opcional: enlace al modelo)* |
 | **Microcontrolador** | ESP8266 (un módulo antiguo que tenía por casa) |
 | **Micrófono** | *(por completar: modelo)*, analógico, conectado al pin A0 |
 | **LEDs** | *(por completar: tipo y número de LEDs)* |

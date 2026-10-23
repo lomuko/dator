@@ -46,7 +46,7 @@ En Cantabria, la luz difusa es la norma. Los paneles bifaciales no solo son est�
 
 ---
 
-## ⚡ 3. El Inversor: Deye 6kW Híbrido
+## ⚡ 3. El Inversor: Deye 8kW Híbrido
 
 El inversor es el kernel de nuestro sistema operativo energético. Tras analizar el mercado, la comparativa fue clara:
 
@@ -78,7 +78,7 @@ Uno de los mayores secretos en las instalaciones solares es el desglose real de 
 ### Core Fotovoltaico
 * **Paneles (12 u.):** 857 €
 * **Banco Baterías (15kWh aprox):** 1.047 €
-* **Inversor Híbrido 6kW:** 1.263 €
+* **Inversor Híbrido 8kW:** 1.263 €
 
 ### Estructura e Infraestructura
 * **Estructura (Acero/Madera):** ~784 €
@@ -91,7 +91,7 @@ Uno de los mayores secretos en las instalaciones solares es el desglose real de 
 
 ## 🧠 Conclusión
 
-Por el precio de un coche de segunda mano, he conseguido un porche funcional y una planta de generación que cubre el consumo de mi vivienda (~7 kWh/día) casi por completo. 
+Por el precio de un coche de segunda mano, he conseguido un porche funcional y una planta de generación que cubre el consumo de mi vivienda casi por completo. Calculé unos 7 kWh/día; los [datos reales](/solar-data/) dicen que son más bien 9–10, y aun así de abril a septiembre no he comprado nada a la red. 
 
 Pero como ingeniero, el mayor valor no es el ahorro, sino la **comprensión total del sistema**. No es una "caja negra" instalada por terceros; es una herramienta que puedo monitorizar, tunear y mejorar.
 

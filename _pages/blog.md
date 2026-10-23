@@ -6,9 +6,9 @@ author_profile: true
 excerpt: "Domótica, programación e inteligencia artificial: lo que voy aprendiendo fuera de la serie Solar Home."
 ---
 
-Notas sobre lo que voy aprendiendo y construyendo: **domótica** con Home Assistant, **programación** e **inteligencia artificial**. La instalación solar tiene su propia serie: [Solar Home](/home-lab/).
+Notas sobre lo que voy aprendiendo y construyendo: **energía solar**, **domótica** con Home Assistant, **programación** e **inteligencia artificial**. La instalación solar tiene su propia serie: [Solar Home](/home-lab/).
 
-{% assign secciones = "domotica|Domótica,programacion|Programación,ia|Inteligencia artificial" | split: "," %}
+{% assign secciones = "energia-solar|Energía solar,domotica|Domótica,programacion|Programación,ia|Inteligencia artificial" | split: "," %}
 {% for s in secciones %}
   {% assign par = s | split: "|" %}
   {% assign cat = par[0] %}

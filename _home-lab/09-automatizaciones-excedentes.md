@@ -6,7 +6,7 @@ header:
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"
-date: 2026-10-23
+date: 2026-11-13
 collection: porche-solar
 tags: [homeassistant, automatizacion, excedentes, termo, deye, forecast, pvpc]
 excerpt: "Termo con el sol, carga nocturna según la previsión de mañana y coche con lo que sobra: las automatizaciones que convierten los datos en ahorro."
@@ -108,6 +108,15 @@ Los relés todo/nada encienden el termo entero (por ejemplo 2 kW) aunque solo so
 
 ---
 
+### Cuando son varios aparatos: PV Excess Control
+Con un termo, dos automatizaciones bastan. Pero cuando quieres alimentar con excedentes **varios aparatos** (termo, deshumidificadores, depuradora, coche…), aparecen las preguntas: ¿quién va primero?, ¿qué pasa si no hay para todos?
+
+Yo lo resolví con **[PV Excess Control](https://github.com/nicorusti/ha-advanced-blueprints)**, un *blueprint* que funciona con **pyscript** (instalable desde HACS). Creas una automatización por aparato con su **prioridad**, y el optimizador reparte lo que sobra teniendo en cuenta la producción, el consumo y el nivel de la batería. Funciona también en **vertido cero**, apoyándose en la previsión de Solcast, y puede **regular la corriente** de aparatos que lo admitan, como un cargador de coche. En mi casa gestiona el termo y los deshumidificadores.
+
+Lo cuento con más detalle en [Eficiencia en casa con energía solar](/energia-solar/electrificar-la-casa/).
+
+---
+
 ## 🌙 3. Cargar la batería de noche según la previsión de mañana
 
 Esta es la automatización con más impacto en invierno, y la que más se comenta en el grupo.
@@ -177,6 +186,17 @@ El coche es el **consumo flexible más grande** de una casa: 7 kW durante horas.
 
 * **Integración directa cargador–inversor.** Algunos cargadores (el V2C es el más comentado) hablan con el Deye por RS485 y ajustan solos la potencia a lo que sobra. Ojo con la regla del [maestro único por bus](/home-lab/home-assistant-rs485/): si ya tienes Home Assistant como maestro en el RS485 del Deye, no puedes colgar el cargador ahí mismo.
 * **Control desde Home Assistant.** HA lee la exportación (o el SOC y la producción) y ajusta la corriente máxima del cargador cada pocos segundos. Es más flexible (puedes decidir prioridades: primero batería, luego coche) y no depende de que el cargador sea compatible con tu inversor.
+
+### Mi plan (cuando toque)
+Ahora mismo **no tengo coche eléctrico**, ni intención de comprarlo mientras el de combustión siga funcionando. Pero cuando falle, el eléctrico será la opción lógica, y los números ya están hechos:
+
+* **Lo que sobra:** en verano, mis paneles podrían producir 21–27 kWh al día, y la casa aprovecha unos 10. Se pierden entre **11 y 17 kWh diarios**.
+* **Lo que gasta un coche:** un eléctrico consume unos **15–18 kWh cada 100 km**.
+* **El resultado:** con esos excedentes saldrían unos **60–100 km gratis al día** en verano. En invierno, en Cantabria, poco o nada: ahí tocaría cargar de la red en horario valle.
+
+La parte técnica ya está casi resuelta. El **Deye de 8 kW** tiene margen, y un cargador monofásico funciona desde 6 A (unos 1,4 kW), así que puede empezar a cargar con excedentes pequeños. Y **PV Excess Control**, que ya gestiona mi termo y mis deshumidificadores, sabe **regular la corriente** de un cargador. Bastaría con añadir el coche como un aparato más, con su prioridad: primero la batería de casa, luego el termo y después el coche.
+
+Lo que sí tendré que decidir es el **cargador**: uno que se integre directamente con el Deye o uno que controle Home Assistant. Por la regla del maestro único en el RS485, y porque ya tengo PV Excess Control funcionando, la segunda opción es la que más sentido tiene en mi caso.
 
 ---
 
