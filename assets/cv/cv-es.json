@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "lang": "es",
+  "name": "David Tortajada",
+  "title": "Senior Java Developer · E-commerce (Intershop)",
+  "contact": {
+    "email": "mail@davidtor.es",
+    "phone": "",
+    "location": "Cantabria, España",
+    "web": "davidtor.es",
+    "linkedin": "linkedin.com/in/davidtor",
+    "github": "github.com/lomuko"
+  },
+  "summary": "Senior Java Developer con más de 15 años de experiencia construyendo y optimizando plataformas de comercio electrónico para marcas europeas. Especializado en Intershop, Spring Boot y Solr. Me interesan el código limpio, la automatización y la energía solar DIY con Home Assistant.",
+  "experience": [
+    {
+      "role": "Independent Engineering & Java Refresh",
+      "company": "Proyectos propios",
+      "start": "May 2024",
+      "end": "",
+      "bullets": [
+        "Modern Java: arquitecturas actuales con Java 17/21 y Spring Boot 3.",
+        "Home Lab: diseño integral de una instalación solar de 5,28 kWp con almacenamiento DIY (LiFePO₄).",
+        "Automatización con Home Assistant (YAML, Python) para la gestión inteligente de consumos y excedentes."
+      ],
+      "stack": "Java 17/21, Spring Boot 3, Home Assistant, Python, MQTT, Modbus"
+    },
+    {
+      "role": "Freelance Java & Intershop Consultant",
+      "company": "Valtech / Wunderman Thompson",
+      "start": "Nov 2020",
+      "end": "May 2024",
+      "bullets": [
+        "Desarrollo y mantenimiento de plataformas para retailers europeos de primer nivel.",
+        "Implementación de REST APIs y microservicios para integrar sistemas de terceros.",
+        "Optimización de Solr y de consultas Oracle/MSSQL en entornos de alta concurrencia."
+      ],
+      "stack": "Java, Intershop, Solr, Oracle, MSSQL, Git, CI/CD"
+    },
+    {
+      "role": "Java & Intershop Consultant",
+      "company": "Incentro",
+      "start": "Jul 2013",
+      "end": "Nov 2020",
+      "bullets": [
+        "Liderazgo técnico en migraciones críticas de Intershop (7.5 → 7.9) para clientes como G-Star RAW y Wolters Kluwer NL; también Coop y Novamedia.",
+        "Disponibilidad 24/7 en sistemas de misión crítica.",
+        "Gestión de flujos de replicación, catálogos masivos y promociones complejas."
+      ],
+      "stack": "Intershop, Java, Oracle, DevOps, Agile"
+    },
+    {
+      "role": "C# Developer",
+      "company": "Ayuntamiento de Santander / Quality Objects",
+      "start": "Ene 2013",
+      "end": "Jul 2013",
+      "bullets": [
+        "Aplicaciones web internas con C#/.NET y arquitecturas de capas con WCF."
+      ],
+      "stack": "C#, .NET, WCF"
+    },
+    {
+      "role": "Analista Java",
+      "company": "Mutua Madrileña",
+      "start": "Ago 2008",
+      "end": "May 2012",
+      "bullets": [
+        "Desarrollo y mantenimiento de aplicaciones web J2EE."
+      ],
+      "stack": "Spring, Hibernate, Struts, jQuery"
+    },
+    {
+      "role": "Junior Developer",
+      "company": "Indra",
+      "start": "Feb 2007",
+      "end": "Jun 2008",
+      "bullets": [
+        "Funcionalidades para plataformas del sector seguros con J2EE MVC, Spring y Ajax."
+      ],
+      "stack": "J2EE, Spring, Ajax"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "items": [
+        "Java 17/21",
+        "Spring Boot",
+        "J2EE",
+        "Hibernate",
+        "REST APIs",
+        "C#/.NET"
+      ]
+    },
+    {
+      "name": "E-commerce y búsqueda",
+      "items": [
+        "Intershop 7.5–7.9",
+        "Solr"
+      ]
+    },
+    {
+      "name": "Datos",
+      "items": [
+        "Oracle",
+        "MSSQL",
+        "InfluxDB"
+      ]
+    },
+    {
+      "name": "DevOps y cloud",
+      "items": [
+        "Git",
+        "CI/CD",
+        "Jenkins",
+        "Docker",
+        "AWS",
+        "Azure"
+      ]
+    },
+    {
+      "name": "Metodologías",
+      "items": [
+        "Scrum",
+        "Kanban",
+        "Agile"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Solar Home",
+      "url": "davidtor.es/home-lab",
+      "text": "Serie de artículos sobre mi porche solar de 5,28 kWp con baterías LiFePO₄ DIY, inversor Deye y Home Assistant."
+    },
+    {
+      "name": "Datos de mi instalación solar",
+      "url": "davidtor.es/solar-data",
+      "text": "Panel público con la producción y el consumo diarios: un JSON publicado desde Home Assistant y gráficas SVG en JavaScript puro."
+    }
+  ],
+  "education": [
+    {
+      "title": "Ingeniería Técnica en Informática de Sistemas",
+      "school": "Universidad de Zaragoza",
+      "period": "2000 – 2006"
+    }
+  ],
+  "certifications": [
+    "Professional Scrum Master I (PSM I) – Scrum.org",
+    "Intershop Developer Certified",
+    "Formación en Angular 8 y ciberseguridad"
+  ],
+  "languages": [
+    {
+      "name": "Español",
+      "level": "Nativo"
+    },
+    {
+      "name": "Inglés",
+      "level": "B1"
+    }
+  ]
+}

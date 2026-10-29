@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "lang": "en",
+  "name": "David Tortajada",
+  "title": "Senior Java Developer · E-commerce (Intershop)",
+  "contact": {
+    "email": "mail@davidtor.es",
+    "phone": "",
+    "location": "Cantabria, Spain",
+    "web": "davidtor.es",
+    "linkedin": "linkedin.com/in/davidtor",
+    "github": "github.com/lomuko"
+  },
+  "summary": "Senior Java Developer with more than 15 years of experience building and optimizing e-commerce platforms for European brands. Specialized in Intershop, Spring Boot and Solr. I care about clean code, automation and DIY solar energy with Home Assistant.",
+  "experience": [
+    {
+      "role": "Independent Engineering & Java Refresh",
+      "company": "Own projects",
+      "start": "May 2024",
+      "end": "",
+      "bullets": [
+        "Modern Java: current architectures with Java 17/21 and Spring Boot 3.",
+        "Home Lab: end-to-end design of a 5.28 kWp solar installation with DIY storage (LiFePO₄).",
+        "Home Assistant automation (YAML, Python) for smart management of consumption and surplus energy."
+      ],
+      "stack": "Java 17/21, Spring Boot 3, Home Assistant, Python, MQTT, Modbus"
+    },
+    {
+      "role": "Freelance Java & Intershop Consultant",
+      "company": "Valtech / Wunderman Thompson",
+      "start": "Nov 2020",
+      "end": "May 2024",
+      "bullets": [
+        "Development and maintenance of platforms for top-tier European retailers.",
+        "Implementation of REST APIs and microservices to integrate third-party systems.",
+        "Solr optimization and Oracle/MSSQL query tuning in high-concurrency environments."
+      ],
+      "stack": "Java, Intershop, Solr, Oracle, MSSQL, Git, CI/CD"
+    },
+    {
+      "role": "Java & Intershop Consultant",
+      "company": "Incentro",
+      "start": "Jul 2013",
+      "end": "Nov 2020",
+      "bullets": [
+        "Technical lead on critical Intershop migrations (7.5 → 7.9) for clients such as G-Star RAW and Wolters Kluwer NL; also Coop and Novamedia.",
+        "24/7 availability on mission-critical systems.",
+        "Management of replication flows, large catalogs and complex promotions."
+      ],
+      "stack": "Intershop, Java, Oracle, DevOps, Agile"
+    },
+    {
+      "role": "C# Developer",
+      "company": "Santander Town Hall / Quality Objects",
+      "start": "Jan 2013",
+      "end": "Jul 2013",
+      "bullets": [
+        "Internal web applications with C#/.NET and layered architectures using WCF."
+      ],
+      "stack": "C#, .NET, WCF"
+    },
+    {
+      "role": "Java Analyst",
+      "company": "Mutua Madrileña",
+      "start": "Aug 2008",
+      "end": "May 2012",
+      "bullets": [
+        "Development and maintenance of J2EE web applications."
+      ],
+      "stack": "Spring, Hibernate, Struts, jQuery"
+    },
+    {
+      "role": "Junior Developer",
+      "company": "Indra",
+      "start": "Feb 2007",
+      "end": "Jun 2008",
+      "bullets": [
+        "Features for insurance-sector platforms using J2EE MVC, Spring and Ajax."
+      ],
+      "stack": "J2EE, Spring, Ajax"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "items": [
+        "Java 17/21",
+        "Spring Boot",
+        "J2EE",
+        "Hibernate",
+        "REST APIs",
+        "C#/.NET"
+      ]
+    },
+    {
+      "name": "E-commerce & search",
+      "items": [
+        "Intershop 7.5–7.9",
+        "Solr"
+      ]
+    },
+    {
+      "name": "Data",
+      "items": [
+        "Oracle",
+        "MSSQL",
+        "InfluxDB"
+      ]
+    },
+    {
+      "name": "DevOps & cloud",
+      "items": [
+        "Git",
+        "CI/CD",
+        "Jenkins",
+        "Docker",
+        "AWS",
+        "Azure"
+      ]
+    },
+    {
+      "name": "Methodologies",
+      "items": [
+        "Scrum",
+        "Kanban",
+        "Agile"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Solar Home",
+      "url": "davidtor.es/home-lab",
+      "text": "Article series about my 5.28 kWp solar porch with DIY LiFePO₄ batteries, a Deye inverter and Home Assistant (in Spanish)."
+    },
+    {
+      "name": "My solar installation in numbers",
+      "url": "davidtor.es/en/solar-data",
+      "text": "Public dashboard with daily production and consumption: a JSON published from Home Assistant and plain-JavaScript SVG charts."
+    }
+  ],
+  "education": [
+    {
+      "title": "Technical Engineering in Computer Systems",
+      "school": "University of Zaragoza",
+      "period": "2000 – 2006"
+    }
+  ],
+  "certifications": [
+    "Professional Scrum Master I (PSM I) – Scrum.org",
+    "Intershop Developer Certified",
+    "Angular 8 and cybersecurity training"
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "B1"
+    }
+  ]
+}
