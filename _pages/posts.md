@@ -1,4 +1,7 @@
 ---
+noindex: true
+sitemap: false
+search: false
 title: "Todos los posts"
 permalink: /posts/
 layout: single

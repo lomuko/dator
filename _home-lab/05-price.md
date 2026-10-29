@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Solar Home-Lab V: Price"
+title: "Solar Home-Lab V: Cuánto cuesta una instalación solar DIY con baterías"
 header:
   overlay_image: /assets/images/solar/solar5.jpg
   overlay_filter: 0.5
@@ -9,7 +9,7 @@ sidebar:
 date: 2026-04-12
 collection: porche-solar
 tags: [solar, homelab, energia, fotovoltaica, autoconsumo]
-excerpt: "Cómo pasé de querer un simple porche a diseñar un sistema solar completo en Cantabria."
+excerpt: "Paneles, batería LiFePO₄, inversor híbrido y estructura del porche: lo que me costó cada pieza de mi instalación fotovoltaica, sin maquillar."
 toc: true
 toc_sticky: true
 slug: price

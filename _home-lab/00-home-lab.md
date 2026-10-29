@@ -8,13 +8,13 @@ sidebar:
   nav: "home_lab_nav"
 date: 2026-03-14
 tags: [solar, homelab, energia, fotovoltaica, autoconsumo]
-excerpt: "Instalacion de porche solar en casa y baterias DIY"
+excerpt: "Serie completa sobre mi instalación solar DIY en Cantabria: porche fotovoltaico de 5,28 kWp, baterías LiFePO₄ caseras, inversor Deye y Home Assistant."
 toc: true
 permalink: /home-lab/
 ---
 
 ## El Sistema
-Instalación de 5,4 kWp (12 paneles) con baterías DIY. Automatización integral mediante **Home Assistant**.
+Instalación de 5,28 kWp (12 paneles de 440 W) con baterías DIY. Automatización integral mediante **Home Assistant**.
 
 ## Stack Tecnológico
 * **Control:** Home Assistant OS en Raspberry Pi / NUC.

@@ -2,8 +2,8 @@
 ref: home
 description: "David Tortajada, Senior Java Developer especializado en e-commerce (Intershop, Spring Boot). Web personal, experiencia y proyecto solar DIY."
 layout: single
-title: "David Tortajada"
-excerpt: "Senior Java Developer & E-commerce Consultant"
+title: "David Tortajada, Senior Java Developer"
+excerpt: "E-commerce con Intershop · Spring Boot · Home Assistant y energía solar DIY"
 permalink: /
 
 header:
@@ -62,14 +62,30 @@ Durante mi carrera he trabajado en proyectos de alto impacto:
 
 ---
 
-## 🧩 Últimos contenidos
+## 🧩 Lo último que he publicado
 
-Aquí comparto lo que estoy haciendo últimamente: aprendizaje, pruebas técnicas y experiencias reales.
-* **Modern Java:** Refrescando patrones de diseño y nuevas funcionalidades de Java 17 para arquitecturas de microservicios.
-* **Energy Intelligence:** Optimizando el consumo de mi instalación solar mediante scripts personalizados en Home Assistant y monitorización de datos en tiempo real.
-* **Clean Code:** Siempre priorizando soluciones legibles sobre soluciones complejas.
+Aprendizaje, pruebas técnicas y experiencias reales: energía solar, domótica con Home Assistant y programación.
 
-👉 [Ver la serie Solar Home →](/home-lab/)
+<div class="entries-list">
+  {% for post in site.posts limit: 4 %}
+    {% include archive-single.html type="list" %}
+  {% endfor %}
+</div>
+
+👉 [Ver todos los artículos →](/blog/)
+
+### ☀️ Serie Solar Home
+
+Cómo he montado mi porche solar de 5,28 kWp con baterías LiFePO₄ DIY en Cantabria, capítulo a capítulo, con [datos reales de producción](/solar-data/).
+
+<div class="entries-list">
+  {% assign capitulos = site.home-lab | where_exp: "d", "d.url != '/home-lab/'" | sort: "date" | reverse %}
+  {% for post in capitulos limit: 3 %}
+    {% include archive-single.html type="list" %}
+  {% endfor %}
+</div>
+
+👉 [Ver la serie completa →](/home-lab/)
 
 ---
 

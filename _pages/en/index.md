@@ -4,8 +4,8 @@ lang: en
 locale: en-US
 description: "David Tortajada, Senior Java Developer specialized in e-commerce (Intershop, Spring Boot). Personal site, experience and DIY solar project."
 layout: single
-title: "David Tortajada"
-excerpt: "Senior Java Developer & E-commerce Consultant"
+title: "David Tortajada, Senior Java Developer"
+excerpt: "E-commerce with Intershop · Spring Boot · Home Assistant and DIY solar"
 permalink: /en/
 author_profile: true
 header:
@@ -66,10 +66,19 @@ Throughout my career I've worked on high-impact projects:
 
 ## 🧩 Latest content
 
-Here is what I've been up to lately: learning, technical experiments and real-world experience.
-* **Modern Java:** Refreshing design patterns and new features of Java 17 for microservice architectures.
-* **Energy Intelligence:** Optimizing the consumption of my solar installation with custom Home Assistant scripts and real-time data monitoring.
-* **Clean Code:** Always favoring readable solutions over complex ones.
+Learning, technical experiments and real-world experience on solar energy, Home Assistant and programming. The articles are written in Spanish.
+
+<div class="entries-list">
+  {% for post in site.posts limit: 4 %}
+    {% include archive-single.html type="list" %}
+  {% endfor %}
+</div>
+
+👉 [All articles (in Spanish) →](/blog/)
+
+### ☀️ Solar Home series
+
+How I built my 5.28 kWp solar porch with DIY LiFePO₄ batteries in Cantabria, with [real production data](/en/solar-data/).
 
 👉 [Read the Solar Home series (in Spanish) →](/home-lab/)
 

@@ -11,7 +11,7 @@ author_profile: true
 
 I'm currently open to new opportunities as a **Senior Java Developer** or **E-commerce Consultant**, especially in remote roles or in Cantabria.
 
-![](/assets/images/me.jpg)
+![David Tortajada](/assets/images/me.jpg)
 
 ### Ways to reach me
 

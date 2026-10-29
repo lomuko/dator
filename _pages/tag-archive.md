@@ -1,4 +1,7 @@
 ---
+noindex: true
+sitemap: false
+search: false
 title: "Posts por etiqueta"
 permalink: /tags/
 layout: single

@@ -7,3 +7,15 @@
   {%- assign es_page = hl | where_exp: 'p', "p.lang != 'en'" | first -%}
   {%- if es_page -%}<link rel="alternate" hreflang="x-default" href="{{ es_page.url | absolute_url }}">{%- endif -%}
 {%- endif -%}
+
+<meta name="twitter:card" content="summary_large_image">
+{%- if page.url == '/' or page.url == '/en/' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"davidtor.es","url":{{ site.url | jsonify }},"inLanguage":{% if page.lang == 'en' %}"en"{% else %}"es"{% endif %},"author":{"@type":"Person","name":"David Tortajada"}}
+</script>
+{%- endif -%}
+{%- if page.date and page.url != '/home-lab/' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ page.excerpt | strip_html | strip_newlines | truncate: 300 | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},"inLanguage":"es","keywords":{{ page.tags | join: ", " | jsonify }},"image":{{ page.header.og_image | default: page.header.overlay_image | default: site.og_image | absolute_url | jsonify }},"mainEntityOfPage":{"@type":"WebPage","@id":{{ page.url | absolute_url | jsonify }}},"author":{"@type":"Person","name":"David Tortajada","url":{{ '/about/' | absolute_url | jsonify }}}}
+</script>
+{%- endif -%}

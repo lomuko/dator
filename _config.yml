@@ -115,3 +115,11 @@ collections:
 
 # Datos diarios publicados desde Home Assistant (repo de datos publico)
 solar_data_url: https://raw.githubusercontent.com/lomuko/ha_solar_data/main/daily.json
+
+# Datos estructurados (JSON-LD Person con enlaces sameAs)
+social:
+  type: Person
+  name: "David Tortajada"
+  links:
+    - "https://www.linkedin.com/in/davidtor"
+    - "https://github.com/lomuko"
