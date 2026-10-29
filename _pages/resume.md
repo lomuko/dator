@@ -11,6 +11,8 @@ author_profile: true
 
 Con más de 15 años de experiencia, he construido y optimizado plataformas de comercio electrónico para marcas globales. Mi enfoque une la robustez de las arquitecturas empresariales con la agilidad del desarrollo moderno.
 
+[Descargar CV en PDF]({{ "/assets/cv-david-tor.pdf" | relative_url }}){: .btn .btn--primary}
+
 ---
 
 ## 🛠️ Stack Tecnológico
@@ -39,7 +41,7 @@ Tras años en consultoría para grandes retailers, me encuentro en una fase de e
 
 * Desarrollo y mantenimiento de plataformas para **retailers europeos de primer nivel**.
 * Implementación de REST APIs y microservicios para la integración de sistemas de terceros.
-* Optimización de **Solr Search** y tunning de consultas **Oracle/MSSQL** para entornos de alta concurrencia.
+* Optimización de **Solr Search** y tuning de consultas **Oracle/MSSQL** para entornos de alta concurrencia.
 
 ### Java & Intershop Consultant (Incentro)
 *Julio 2013 – Noviembre 2020*
