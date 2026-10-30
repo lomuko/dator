@@ -69,4 +69,4 @@ Desarrollo y mantenimiento evolutivo de plataformas para clientes internacionale
 ## 🚀 Actualmente
 Desde mayo de 2024, compagino proyectos de **Ingeniería Aplicada (Solar/IoT)** con la actualización constante de mi stack técnico a **Java 17 y Spring Boot 3**, buscando siempre la eficiencia y el código limpio.
 
-[Descargar CV en PDF]({{ "/assets/cv-david-tor.pdf" | relative_url }}){: .btn .btn--primary}
+[Descargar CV en PDF]({{ "/assets/cv-david-tortajada-es.pdf" | relative_url }}){: .btn .btn--primary}

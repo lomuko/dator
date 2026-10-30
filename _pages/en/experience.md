@@ -71,4 +71,4 @@ Development and ongoing maintenance of platforms for high-profile international 
 ## 🚀 Currently
 Since May 2024, I've been combining **applied engineering (Solar/IoT)** projects with the continuous update of my technical stack to **Java 17 and Spring Boot 3**, always aiming for efficiency and clean code.
 
-[Download resume (PDF)]({{ "/assets/cv-david-tor.pdf" | relative_url }}){: .btn .btn--primary}
+[Download resume (PDF)]({{ "/assets/cv-david-tortajada-en.pdf" | relative_url }}){: .btn .btn--primary}

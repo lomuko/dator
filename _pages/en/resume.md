@@ -13,7 +13,7 @@ author_profile: true
 
 With more than 15 years of experience, I've built and optimized e-commerce platforms for global brands. My approach combines the robustness of enterprise architectures with the agility of modern development.
 
-[Download resume (PDF)]({{ "/assets/cv-david-tor.pdf" | relative_url }}){: .btn .btn--primary}
+[Download resume (PDF)]({{ "/assets/cv-david-tortajada-en.pdf" | relative_url }}){: .btn .btn--primary}
 
 ---
 

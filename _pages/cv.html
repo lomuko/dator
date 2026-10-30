@@ -18,6 +18,7 @@ body { margin: 0; background: #f1efea; }
 .cv-bar { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 16px; background: #fff; border-bottom: 1px solid #e4dccd; }
 .cv-bar .sp { flex: 1; }
 .cv-bar a, .cv-bar button { font: inherit; font-size: .88rem; padding: 6px 14px; border: 1px solid #c9b998; border-radius: 6px; background: #fff; color: #1b1b1b; cursor: pointer; text-decoration: none; }
+.cv-bar a.main { color: #fff; }
 .cv-bar button[aria-pressed="true"] { border-color: #8a5200; font-weight: 700; background: #fbf6ec; }
 .cv-bar .main { background: #8a5200; border-color: #8a5200; color: #fff; }
 .cv-bar button:focus-visible, .cv-bar a:focus-visible { outline: 2px solid #8a5200; outline-offset: 2px; }
@@ -32,10 +33,11 @@ body { margin: 0; background: #f1efea; }
   <button type="button" id="l-en" aria-pressed="false">English</button>
   <span class="sp"></span>
   <a href="{{ '/' | relative_url }}">← davidtor.es</a>
-  <button type="button" class="main" id="pdf">Descargar PDF</button>
+  <button type="button" id="print">Imprimir</button>
+  <a class="main" id="pdf" href="{{ '/assets/cv-david-tortajada-es.pdf' | relative_url }}" download>Descargar PDF</a>
 </div>
 <div class="cv-wrap">
-  <p class="cv-hint cv-noprint" id="hint">En el diálogo de impresión elige «Guardar como PDF» y desactiva «Encabezados y pies de página».</p>
+  <p class="cv-hint cv-noprint" id="hint">«Imprimir» genera una versión de este CV a partir de los datos de la web; el PDF descargable es el CV con foto.</p>
   <div id="cv-out" data-base="{{ '/assets/cv/' | relative_url }}"><p class="cv-msg">…</p></div>
 </div>
 <script src="{{ '/assets/js/cv-render.js' | relative_url }}"></script>
@@ -44,13 +46,16 @@ body { margin: 0; background: #f1efea; }
   var out = document.getElementById('cv-out'), base = out.getAttribute('data-base');
   var lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'es';
   var cache = {}, data = null;
-  var HINT = { es: 'En el diálogo de impresión elige «Guardar como PDF» y desactiva «Encabezados y pies de página».', en: 'In the print dialog choose “Save as PDF” and turn off “Headers and footers”.' };
-  var BTN = { es: 'Descargar PDF', en: 'Download PDF' };
+  var HINT = { es: '«Imprimir» genera una versión de este CV a partir de los datos de la web; el PDF descargable es el CV con foto.', en: '“Print” produces a version of this CV from the website data; the downloadable PDF is the CV with photo.' };
+  var BTN = { es: 'Descargar PDF', en: 'Download PDF' }, PRN = { es: 'Imprimir', en: 'Print' };
+  var PDF = { es: '{{ '/assets/cv-david-tortajada-es.pdf' | relative_url }}', en: '{{ '/assets/cv-david-tortajada-en.pdf' | relative_url }}' };
   function show() {
     document.documentElement.lang = lang;
     document.getElementById('l-es').setAttribute('aria-pressed', String(lang === 'es'));
     document.getElementById('l-en').setAttribute('aria-pressed', String(lang === 'en'));
     document.getElementById('pdf').textContent = BTN[lang];
+    document.getElementById('pdf').setAttribute('href', PDF[lang]);
+    document.getElementById('print').textContent = PRN[lang];
     document.getElementById('hint').textContent = HINT[lang];
     var go = function (d) { data = d; CV.render(d, lang, out); document.title = (d.name || 'CV') + ' - CV'; };
     if (cache[lang]) return go(cache[lang]);
@@ -61,7 +66,7 @@ body { margin: 0; background: #f1efea; }
   function setLang(l) { lang = l; try { history.replaceState(null, '', l === 'en' ? '?lang=en' : location.pathname); } catch (e) {} show(); }
   document.getElementById('l-es').addEventListener('click', function () { setLang('es'); });
   document.getElementById('l-en').addEventListener('click', function () { setLang('en'); });
-  document.getElementById('pdf').addEventListener('click', function () { window.print(); });
+  document.getElementById('print').addEventListener('click', function () { window.print(); });
   show();
 })();
 </script>

@@ -11,7 +11,7 @@ author_profile: true
 
 Con más de 15 años de experiencia, he construido y optimizado plataformas de comercio electrónico para marcas globales. Mi enfoque une la robustez de las arquitecturas empresariales con la agilidad del desarrollo moderno.
 
-[Descargar CV en PDF]({{ "/assets/cv-david-tor.pdf" | relative_url }}){: .btn .btn--primary}
+[Descargar CV en PDF]({{ "/assets/cv-david-tortajada-es.pdf" | relative_url }}){: .btn .btn--primary}
 
 ---
 
