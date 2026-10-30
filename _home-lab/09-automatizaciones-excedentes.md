@@ -175,6 +175,62 @@ automation:
 
 > Los nombres y las opciones exactas de las entidades de programa (`prog1_...`) dependen de tu versión del addon y de tu modelo. Míralas antes en la ficha del dispositivo en HA. Y asegúrate de que la franja horaria del programa 1 en el inversor coincide con tu horario valle.
 
+### Mi versión: cargar solo cuando la luz está regalada
+Con la tarifa **PVPC** el precio cambia cada hora, y hay horas (sobre todo de madrugada, o con mucho viento y sol en el sistema) en las que la electricidad está **muy barata**. Mi automatización actual aprovecha eso: **solo carga la batería desde la red cuando el precio baja de un umbral** que yo marco, por ejemplo **0,02 €/kWh**.
+
+La lógica es sencilla:
+
+1. La integración **PVPC** de Home Assistant (`sensor.esios_pvpc`) da el precio de cada hora.
+2. Un **ayudante numérico** (`input_number`) guarda el precio máximo al que acepto cargar, para cambiarlo desde el móvil sin tocar la automatización.
+3. Si el precio está por debajo del umbral **y** la batería no está llena, se activa la carga desde red en el inversor. Si el precio sube o la batería se llena, se desactiva.
+
+```yaml
+input_number:
+  precio_max_carga:
+    name: "Precio máximo para cargar de red"
+    min: 0
+    max: 0.20
+    step: 0.005
+    unit_of_measurement: "€/kWh"
+
+automation:
+  - alias: "Cargar batería de red cuando la luz está barata"
+    trigger:
+      - platform: state
+        entity_id: sensor.esios_pvpc        # cambia cada hora
+      - platform: state
+        entity_id: input_number.precio_max_carga
+    action:
+      - choose:
+          - conditions:
+              - condition: numeric_state
+                entity_id: sensor.esios_pvpc
+                below: input_number.precio_max_carga
+              - condition: numeric_state
+                entity_id: sensor.ss_battery_soc
+                below: 98
+            sequence:
+              - service: select.select_option
+                target:
+                  entity_id: select.ss_prog1_charge
+                data:
+                  option: "Allow Grid"
+        default:
+          - service: select.select_option
+            target:
+              entity_id: select.ss_prog1_charge
+            data:
+              option: "No Grid or Gen"
+```
+
+Unos apuntes:
+
+* **El umbral depende de qué precio mires.** El PVPC completo incluye peajes y cargos, así que rara vez baja de unos céntimos; el precio de la energía en el mercado sí llega a estar cerca de cero o negativo. Elige el sensor y el umbral según lo que quieras comparar.
+* **Combínalo con la previsión.** Si mañana va a hacer sol, no tiene sentido llenar la batería de la red esta noche aunque esté barata: los paneles lo harán gratis. Se puede añadir como condición el sensor de previsión de Forecast.Solar o Solcast.
+* **Comprueba la franja del programa.** La opción de carga desde red se aplica a la franja horaria del programa del Deye; asegúrate de que cubre las horas en las que suele estar barata.
+
+<!-- TODO: si quieres, pega tu automatización real y la sustituyo -->
+
 ### Otra regla útil: forzar el 100 % de vez en cuando
 Como vimos en el [post de baterías](/home-lab/baterias-diy/), el BMS necesita llegar al **100 % real** periódicamente para recalibrar el SOC. En invierno puedes pasar semanas sin llegar. Un compañero del grupo fuerza la carga nocturna completa cuando el SOC de sus dos baterías **difiere más de un 5 %**, señal de que los BMS se han descalibrado. Otra opción más simple: forzarla si han pasado más de 7 días sin llegar al 100 %.
 
