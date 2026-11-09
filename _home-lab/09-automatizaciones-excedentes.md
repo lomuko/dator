@@ -6,7 +6,7 @@ header:
   overlay_filter: 0.5
 sidebar:
   nav: "home_lab_nav"
-date: 2026-11-13
+date: 2026-11-09
 collection: porche-solar
 tags: [homeassistant, automatizacion, excedentes, termo, deye, forecast, pvpc]
 excerpt: "Termo con el sol, carga nocturna según la previsión de mañana y coche con lo que sobra: las automatizaciones que convierten los datos en ahorro."
